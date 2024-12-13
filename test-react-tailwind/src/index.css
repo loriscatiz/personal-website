@@ -2,7 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .button {
+    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base;
+  }
+  .button:hover,
+  .button:focus {
+    @apply scale-110 -translate-y-1;
+  }
+  .button:where(.primary) {
+    @apply bg-lime-400 border-red-600 text-red-600;
+  }
+  .button:where(.secondary) {
+    @apply bg-transparent border-lime-400;
+  }
+}
+
+@layer components {
+  .hero-wrapper {
+    @apply pt-32 bg-gray-600;
+    min-height: 80vh;
+  }
+  .hero-content {
+    @apply container m-auto flex flex-col  items-start gap-4 px-4 font-black text-5xl lg:text-7xl lg:gap-8;
+  }
+}
+
+@layer components {
+  .header {
+    @apply bg-lime-500 bg-opacity-50 min-h-20 fixed w-full transition-all ease-out duration-300 flex justify-between items-center px-4 backdrop-blur-sm;
+  }
+  .menu{
+    @apply fixed top-full w-full bg-red-500 flex flex-col justify-start py-8 transition-all duration-300 ease-out items-center gap-2 h-svh;
+  }
+}
+
 /*Test*/
-#root{
-    min-height: 500vh;
+
+body {
+  min-height: 500vh;
 }

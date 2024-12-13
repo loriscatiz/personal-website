@@ -1,9 +1,20 @@
 import { useEffect, useState, useRef } from "react";
+import Menu from "./Menu";
 
 function Header() {
   const [visibility, setVisibility] = useState(true);
-  const lastScrollY = useRef(window.scrollY);
-
+  const lastScrollY = useRef(0);
+  const [isTransparent, setTransparent] = useState(true);
+  function debounce<T extends (...args: any[]) => void>(
+    func: T,
+    delay: number
+  ): (...args: Parameters<T>) => void {
+    let timer: number;
+    return (...args: Parameters<T>) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  }
   function throttle<T extends (...args: any[]) => void>(
     func: T,
     limit: number
@@ -18,31 +29,41 @@ function Header() {
       }
     };
   }
-
-  const handleScroll = throttle(() => {
+  // Handle visibility with throttle
+  const handleScrollVisibility = throttle(() => {
     if (window.scrollY > lastScrollY.current) {
       setVisibility(false);
-      console.log(visibility + " expected disappears (false)");
     } else {
       setVisibility(true);
-      console.log(visibility + " expected appears (true)");
     }
     lastScrollY.current = window.scrollY;
   }, 100);
 
+  // Handle transparency with debounce
+  const handleScrollTransparency = debounce(() => {
+    setTransparent(window.scrollY === 0);
+  }, 100);
+
   useEffect(() => {
+    const handleScroll = () => {
+      handleScrollVisibility();
+      handleScrollTransparency();
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
-      window.addEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <header
-      className={`bg-lime-500 bg-opacity-50 min-h-36 fixed w-full transition-transform ease-out duration-500  ${
-        visibility ? "" : "-translate-y-full"
-      }`}
-    ></header>
+      className={`header ${
+        visibility ? "" : "-translate-y-full "
+      } ${isTransparent ? "bg-transparent" : ""}`}
+    >
+      <img src='/public/vite.svg' />
+      <Menu></Menu>
+    </header>
   );
 }
 

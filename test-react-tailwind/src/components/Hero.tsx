@@ -3,9 +3,9 @@ import Button from "./Button";
 function Hero() {
   return (
     <>
-      <div className="bg-sky-950 text-blue-200 min-h-96 pt-36">
-        <div className="container m-auto flex flex-col items-start gap-4">
-          <h1 className="font-black text-7xl">
+      <div className='hero-wrapper'>
+        <div className='hero-content'>
+          <h1>
             <ReactTyped
               strings={[
                 "Front-end",
@@ -21,7 +21,7 @@ function Hero() {
             <br />
             Developer
           </h1>
-          <Button href={"#"} text="Prova"></Button>
+          <Button href={"#"} text='Prova' variant='primary'></Button>
         </div>
       </div>
     </>

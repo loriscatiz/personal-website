@@ -1,15 +1,15 @@
 interface ButtonProps {
-  href: string; // L'URL per il collegamento
+  href?: string; // L'URL per il collegamento
   iconSrc?: string; // Icona opzionale, contrassegnata da "?"
   text: string; // Il testo del pulsante
+  variant: string;
 }
 
-function Button({ href, text }: ButtonProps) {
+function Button({ href, text, variant }: ButtonProps) {
   return (
     <a
       href={href}
-      className="
-    px-5 py-3 bg-rose-600 hover:bg-rose-950 transition-all rounded-full"
+      className={`button ${variant === 'primary' ? 'primary' : 'secondary'}`}
     >
       {text}
     </a>
