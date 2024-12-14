@@ -33,8 +33,10 @@ function Header() {
   const handleScrollVisibility = throttle(() => {
     if (window.scrollY > lastScrollY.current) {
       setVisibility(false);
+      
     } else {
       setVisibility(true);
+
     }
     lastScrollY.current = window.scrollY;
   }, 100);
