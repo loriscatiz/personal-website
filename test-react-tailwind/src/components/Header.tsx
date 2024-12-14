@@ -1,42 +1,21 @@
 import { useEffect, useState, useRef } from "react";
 import Menu from "./Menu";
+import { throttle, debounce } from "../utils";
 
 function Header() {
   const [visibility, setVisibility] = useState(true);
+  const [isMenuOpen, setMenuOpen] = useState(false); // Nuovo stato
   const lastScrollY = useRef(0);
   const [isTransparent, setTransparent] = useState(true);
-  function debounce<T extends (...args: any[]) => void>(
-    func: T,
-    delay: number
-  ): (...args: Parameters<T>) => void {
-    let timer: number;
-    return (...args: Parameters<T>) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), delay);
-    };
-  }
-  function throttle<T extends (...args: any[]) => void>(
-    func: T,
-    limit: number
-  ): (...args: Parameters<T>) => void {
-    let lastCall = 0;
 
-    return (...args: Parameters<T>) => {
-      const now = Date.now();
-      if (now - lastCall >= limit) {
-        lastCall = now;
-        func(...args);
-      }
-    };
-  }
+
   // Handle visibility with throttle
   const handleScrollVisibility = throttle(() => {
-    if (window.scrollY > lastScrollY.current) {
+    if (window.scrollY > lastScrollY.current && !isMenuOpen) {
+      // Nascondi solo se il menu è chiuso
       setVisibility(false);
-      
     } else {
       setVisibility(true);
-
     }
     lastScrollY.current = window.scrollY;
   }, 100);
@@ -56,15 +35,16 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMenuOpen]); // Dipendenza aggiunta
+
   return (
     <header
       className={`header ${
-        visibility ? "" : "-translate-y-full "
+        visibility || isMenuOpen ? "" : "-translate-y-full "
       } ${isTransparent ? "bg-transparent" : ""}`}
     >
       <img src='/public/vite.svg' />
-      <Menu></Menu>
+      <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
 }

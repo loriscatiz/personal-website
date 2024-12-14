@@ -4,18 +4,10 @@
 
 @layer components {
   .button {
-    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base;
+    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1; 
   }
-  .button:hover,
-  .button:focus {
-    @apply scale-110 -translate-y-1;
-  }
-  .button:where(.primary) {
-    @apply bg-lime-400 border-red-600 text-red-600;
-  }
-  .button:where(.secondary) {
-    @apply bg-transparent border-lime-400;
-  }
+
+ 
 }
 
 @layer components {
@@ -32,28 +24,36 @@
   .header {
     @apply bg-lime-500 bg-opacity-50 min-h-20 fixed w-full transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm;
   }
-  .menu{
-    @apply fixed top-full w-full bg-red-500 flex flex-col justify-start py-8 transition-all duration-300 ease-out items-center gap-2 h-fit;
+  .menu-desktop{
+    @apply flex flex-row flex-grow justify-end gap-6 items-center;
   }
-  .hamburger{
-    @apply  flex flex-col justify-center aspect-square w-8 gap-2;
+  .menu-desktop {
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
-  :where(.top-hamburger, .middle-hamburger, .bottom-hamburger){
+
+  .menu-mobile {
+    @apply fixed top-full w-5/6 bg-red-500 py-8 transition-all duration-300 ease-out  ;
+  }
+  .menu-mobile > menu{
+    @apply flex flex-col items-center gap-2 justify-start;
+  }
+  .hamburger {
+    @apply flex flex-col justify-center aspect-square w-8 gap-2;
+  }
+  :where(.top-hamburger, .middle-hamburger, .bottom-hamburger) {
     @apply bg-amber-500 rounded flex-grow w-full transition-all relative duration-500;
-
   }
- .bottom-hamburger{
-  --tw-translate-y: calc(-1rem + 50%);;
-  --tw-rotate: 45deg;
+  .bottom-hamburger {
+    --tw-translate-y: calc(-1rem + 50%);
+    --tw-rotate: 45deg;
+  }
+  .top-hamburger {
+    --tw-translate-y: calc(1rem - 50%);
+    --tw-rotate: -45deg;
+  }
 }
-.top-hamburger{
-  --tw-translate-y: calc(1rem - 50%);
-  --tw-rotate: -45deg;
-}
-
- }
-  
-
 
 /*Test*/
 
