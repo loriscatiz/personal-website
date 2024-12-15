@@ -1,4 +1,4 @@
-import { ReactTyped, Typed } from "react-typed";
+import { ReactTyped } from "react-typed";
 import Button from "./Button";
 function Hero() {
   return (

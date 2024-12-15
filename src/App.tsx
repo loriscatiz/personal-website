@@ -1,13 +1,18 @@
 import Hero from "./components/Hero";
 import Header from "./components/Header";
-import Button from "./components/Button";
+import { ThemeProvider } from "./ThemeContext";
+import ThemeManager from "./ThemeManager";
+
+
 
 function App() {
   return (
     <>
+      <ThemeProvider>
+      <ThemeManager />
       <Header></Header>
-
       <Hero></Hero>
+      </ThemeProvider>
     </>
   );
 }

@@ -4,27 +4,25 @@
 
 @layer components {
   .button {
-    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1; 
+    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1;
   }
-
- 
 }
 
 @layer components {
   .hero-wrapper {
-    @apply pt-32 bg-gray-600;
+    @apply pt-32 bg-white dark:bg-black text-black dark:text-white;
     min-height: 80vh;
   }
   .hero-content {
-    @apply container m-auto flex flex-col  items-start gap-4 px-4 font-black text-5xl lg:text-7xl lg:gap-8;
+    @apply container m-auto flex flex-col items-start gap-4 px-4 font-black text-5xl lg:text-7xl lg:gap-8;
   }
 }
 
 @layer components {
   .header {
-    @apply bg-lime-500 bg-opacity-50 min-h-20 fixed w-full transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm;
+    @apply bg-lime-500 bg-opacity-50 min-h-20  w-full fixed transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm;
   }
-  .menu-desktop{
+  .menu-desktop {
     @apply flex flex-row flex-grow justify-end gap-6 items-center;
   }
   .menu-desktop {
@@ -34,9 +32,9 @@
   }
 
   .menu-mobile {
-    @apply fixed top-full w-5/6 bg-red-500 py-8 transition-all duration-300 ease-out  ;
+    @apply fixed top-full right-0 w-full bg-red-500 py-8 transition-all duration-1000 ease-out;
   }
-  .menu-mobile > menu{
+  .menu-mobile > menu {
     @apply flex flex-col items-center gap-2 justify-start;
   }
   .hamburger {

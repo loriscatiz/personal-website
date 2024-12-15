@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
-import MenuItems from "./MenuItems";
+import { Dispatch, SetStateAction, useEffect } from "react";
+
 import Button from "./Button";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -11,6 +12,23 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
   function handleIsOpen() {
     setMenuOpen(!isMenuOpen); // Modifica diretta dello stato
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".menu-mobile") && !target.closest(".hamburger")) {
+        setMenuOpen(false);
+      }
+    };
+  
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -31,7 +49,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           ></div>
         </button>
         <div
-          className={`menu-mobile ${isMenuOpen ? "right-0" : "-right-full"} `}
+          className={`menu-mobile ${isMenuOpen ? "opacity-100" : "opacity-0 -top-full pointer-events-none"} `}
         >
           <menu
             className={`menu-items`}
@@ -68,7 +86,33 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
         </div>
       </div>
       <menu className='menu-desktop'>
-        <MenuItems></MenuItems>
+      <li className='menu-item'>
+              <a href='#1' >
+                test 1
+              </a>
+            </li>
+            <li className='menu-item'>
+              <a href='#2' >
+                test 2
+              </a>
+            </li>
+            <li className='menu-item'>
+              <a href='#3'>
+                test 3
+              </a>
+            </li>
+            <li className='menu-item'>
+              <a href='#4' >
+                test 4
+              </a>
+            </li>
+            <ThemeToggleButton></ThemeToggleButton>
+            <Button
+              href={"#"}
+              text='Prova'
+              variant='primary'
+              tabIndex={isMenuOpen ? 0 : -1}
+            ></Button>
       </menu>
     </>
   );

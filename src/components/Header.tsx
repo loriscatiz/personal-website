@@ -43,7 +43,7 @@ function Header() {
         visibility || isMenuOpen ? "" : "-translate-y-full "
       } ${isTransparent ? "bg-transparent" : ""}`}
     >
-      <img src='/public/vite.svg' />
+      <img src='/vite.svg' />
       <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
