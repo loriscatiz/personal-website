@@ -42,17 +42,17 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
             className={`top-hamburger ${isMenuOpen ? "transform" : ""}`}
           ></div>
           <div
-            className={`middle-hamburger ${isMenuOpen ? "scale-0" : ""}`}
+            className={`middle-hamburger ${isMenuOpen ? "scale-0 duration-1000" : ""}`}
           ></div>
           <div
             className={`bottom-hamburger ${isMenuOpen ? "transform" : ""}`}
           ></div>
         </button>
         <div
-          className={`menu-mobile ${isMenuOpen ? "opacity-100" : "opacity-0 -top-full pointer-events-none"} `}
+          className={`menu-mobile fixed top-full right-0 w-full bg-red-500 py-8 transition-all duration-1000 ease-out ${isMenuOpen ? "opacity-100" : "opacity-0 -top-full pointer-events-none"} `}
         >
           <menu
-            className={`menu-items`}
+            className={`menu-items flex flex-col items-center gap-2 justify-start`}
             aria-hidden={isMenuOpen ? false : true}
           >
             <li className='menu-item'>
@@ -85,7 +85,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           </menu>
         </div>
       </div>
-      <menu className='menu-desktop'>
+      <menu className='menu-desktop hidden md:flex flex-row flex-grow justify-end gap-6 items-center'>
       <li className='menu-item'>
               <a href='#1' >
                 test 1

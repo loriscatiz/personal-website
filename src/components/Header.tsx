@@ -8,7 +8,6 @@ function Header() {
   const lastScrollY = useRef(0);
   const [isTransparent, setTransparent] = useState(true);
 
-
   // Handle visibility with throttle
   const handleScrollVisibility = throttle(() => {
     if (window.scrollY > lastScrollY.current && !isMenuOpen) {
@@ -39,12 +38,15 @@ function Header() {
 
   return (
     <header
-      className={`header ${
+      className={`bg-sky-800 text-sky-200 dark:bg-sky-200 dark:text-sky-800  bg-opacity-80 min-h-20  w-full fixed transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm ${
         visibility || isMenuOpen ? "" : "-translate-y-full "
-      } ${isTransparent ? "bg-transparent" : ""}`}
+      } ${isTransparent ? "bg-transparent dark:bg-transparent" : ""}`}
     >
       <img src='/vite.svg' />
-      <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+      <Menu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+      />
     </header>
   );
 }

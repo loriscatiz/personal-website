@@ -4,13 +4,13 @@
 
 @layer components {
   .button {
-    @apply px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1;
+    @apply bg-rose-600 text-sky-200 dark:hover:bg-rose-800 hover:bg-rose-400 px-5 py-3 transition-all rounded-xl border-solid border-2 uppercase text-base hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1;
   }
 }
 
 @layer components {
   .hero-wrapper {
-    @apply pt-32 bg-white dark:bg-black text-black dark:text-white;
+    @apply pt-32 dark:bg-sky-800 dark:text-sky-200 bg-sky-200 text-sky-800;
     min-height: 80vh;
   }
   .hero-content {
@@ -19,24 +19,10 @@
 }
 
 @layer components {
-  .header {
-    @apply bg-lime-500 bg-opacity-50 min-h-20  w-full fixed transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm;
-  }
-  .menu-desktop {
-    @apply flex flex-row flex-grow justify-end gap-6 items-center;
-  }
-  .menu-desktop {
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
+ 
 
-  .menu-mobile {
-    @apply fixed top-full right-0 w-full bg-red-500 py-8 transition-all duration-1000 ease-out;
-  }
-  .menu-mobile > menu {
-    @apply flex flex-col items-center gap-2 justify-start;
-  }
+
+
   .hamburger {
     @apply flex flex-col justify-center aspect-square w-8 gap-2;
   }
