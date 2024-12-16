@@ -1,4 +1,3 @@
-import { ReactTyped } from "react-typed";
 import Button from "./Button";
 import Title from "./Title";
 function Hero() {
