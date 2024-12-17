@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 
 import Button from "./Button";
 import ThemeToggleButton from "./ThemeToggleButton";
-import { useTheme } from "../ThemeContext";
 
 interface MenuProps {
   isMenuOpen: boolean;
