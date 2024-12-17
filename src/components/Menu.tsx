@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 
 import Button from "./Button";
 import ThemeToggleButton from "./ThemeToggleButton";
+import { useTheme } from "../ThemeContext";
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -20,11 +21,11 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
         setMenuOpen(false);
       }
     };
-  
+
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-  
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -32,7 +33,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
 
   return (
     <>
-      <div className='md:hidden'>
+      <div className="md:hidden">
         <button
           onClick={handleIsOpen}
           className={`hamburger transition-all`}
@@ -49,70 +50,58 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           ></div>
         </button>
         <div
-          className={`menu-mobile fixed right-0 w-full bg-red-500 py-8 transition-all duration-500 ease-out ${isMenuOpen ? "opacity-100 top-full" : "opacity-0 -top-full pointer-events-none"} `}
+          className={`menu-mobile absolute right-0 w-full py-8 transition-all duration-500 ease-out ${isMenuOpen ? "top-full bg-sky-100 bg-opacity-100 text-sky-950 opacity-100 dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none -top-full opacity-0"} `}
         >
           <menu
-            className={`menu-items flex flex-col items-center gap-2 justify-start`}
+            className={`menu-items flex flex-col items-center justify-start gap-2`}
             aria-hidden={isMenuOpen ? false : true}
           >
-            <li className='menu-item'>
-              <a href='#1' tabIndex={isMenuOpen ? 0 : -1}>
+            <li className="menu-item">
+              <a href="#1" tabIndex={isMenuOpen ? 0 : -1}>
                 test 1
               </a>
             </li>
-            <li className='menu-item'>
-              <a href='#2' tabIndex={isMenuOpen ? 0 : -1}>
+            <li className="menu-item">
+              <a href="#2" tabIndex={isMenuOpen ? 0 : -1}>
                 test 2
               </a>
             </li>
-            <li className='menu-item'>
-              <a href='#3' tabIndex={isMenuOpen ? 0 : -1}>
+            <li className="menu-item">
+              <a href="#3" tabIndex={isMenuOpen ? 0 : -1}>
                 test 3
               </a>
             </li>
-            <li className='menu-item'>
-              <a href='#4' tabIndex={isMenuOpen ? 0 : -1}>
+            <li className="menu-item">
+              <a href="#4" tabIndex={isMenuOpen ? 0 : -1}>
                 test 4
               </a>
             </li>
+            <ThemeToggleButton className="absolute right-[5%] top-0"></ThemeToggleButton>
 
             <Button
               href={"#"}
-              text='Prova'
-              variant='primary'
+              text="Prova"
+              variant="primary"
               tabIndex={isMenuOpen ? 0 : -1}
             ></Button>
           </menu>
         </div>
       </div>
-      <menu className='menu-desktop hidden md:flex flex-row flex-grow justify-end gap-6 items-center'>
-      <li className='menu-item'>
-              <a href='#1' >
-                test 1
-              </a>
-            </li>
-            <li className='menu-item'>
-              <a href='#2' >
-                test 2
-              </a>
-            </li>
-            <li className='menu-item'>
-              <a href='#3'>
-                test 3
-              </a>
-            </li>
-            <li className='menu-item'>
-              <a href='#4' >
-                test 4
-              </a>
-            </li>
-            <ThemeToggleButton></ThemeToggleButton>
-            <Button
-              href={"#"}
-              text='Prova'
-              variant='primary'
-              tabIndex={isMenuOpen ? 0 : -1}
-            ></Button>
+      <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 md:flex">
+        <li className="menu-item">
+          <a href="#1">test 1</a>
+        </li>
+        <li className="menu-item">
+          <a href="#2">test 2</a>
+        </li>
+        <li className="menu-item">
+          <a href="#3">test 3</a>
+        </li>
+        <li className="menu-item">
+          <a href="#4">test 4</a>
+        </li>
+        <ThemeToggleButton></ThemeToggleButton>
+        <Button href={"#"} text="Prova" variant="primary"></Button>
       </menu>
     </>
   );

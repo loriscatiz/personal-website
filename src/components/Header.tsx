@@ -38,9 +38,11 @@ function Header() {
 
   return (
     <header
-      className={`fixed grid min-h-20 w-full items-center transition-all duration-300 ease-out ${
+      className={`header fixed top-0 grid min-h-20 w-full items-center transition-all duration-300 ease-out ${
         visibility || isMenuOpen ? "" : "-translate-y-full"
-      } ${isTransparent ? "bg-transparent text-sky-950 backdrop-blur-0 dark:text-sky-100" : "bg-sky-100 bg-opacity-80 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:bg-opacity-80 dark:text-sky-100"}`}
+      } ${visibility && isMenuOpen ? "bg-opacity-100 dark:bg-opacity-100" : ""} ${
+        visibility && !isMenuOpen ? "bg-opacity-60 dark:bg-opacity-60" : ""
+      } ${isTransparent ? "bg-transparent text-sky-950 dark:text-sky-100" : "bg-sky-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100"}`}
     >
       <div className="container m-auto flex items-center justify-between">
         <img src="/vite.svg" />
