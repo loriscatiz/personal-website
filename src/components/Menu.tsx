@@ -49,7 +49,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           ></div>
         </button>
         <div
-          className={`menu-mobile fixed top-full right-0 w-full bg-red-500 py-8 transition-all duration-1000 ease-out ${isMenuOpen ? "opacity-100" : "opacity-0 -top-full pointer-events-none"} `}
+          className={`menu-mobile fixed right-0 w-full bg-red-500 py-8 transition-all duration-500 ease-out ${isMenuOpen ? "opacity-100 top-full" : "opacity-0 -top-full pointer-events-none"} `}
         >
           <menu
             className={`menu-items flex flex-col items-center gap-2 justify-start`}

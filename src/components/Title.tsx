@@ -8,7 +8,7 @@ interface TitleProps {
   hasReactType?: boolean;
   loop?: boolean;
   preText?: string;
-  preTextClassName: string;
+  preTextClassName?: string;
   firstBr?: boolean;
   postText?: string;
   postTextClassName?: string;
@@ -48,11 +48,11 @@ function Title({
           typeSpeed={typeSpeed}
           backSpeed={backSpeed}
           showCursor={showCursor}
-          loop = {loop}
+          loop={loop}
         />
         {secondBr && <br />}
         <span className={postTextClassName}>{postText}</span>
-      </>
+      </>,
     );
   }
 

@@ -38,15 +38,14 @@ function Header() {
 
   return (
     <header
-      className={`bg-sky-800 text-sky-200 dark:bg-sky-200 dark:text-sky-800  bg-opacity-80 min-h-20  w-full fixed transition-all ease-out duration-300 flex justify-between items-center px-6 backdrop-blur-sm ${
-        visibility || isMenuOpen ? "" : "-translate-y-full "
-      } ${isTransparent ? "bg-transparent dark:bg-transparent" : ""}`}
+      className={`fixed grid min-h-20 w-full items-center transition-all duration-300 ease-out ${
+        visibility || isMenuOpen ? "" : "-translate-y-full"
+      } ${isTransparent ? "bg-transparent text-sky-950 backdrop-blur-0 dark:text-sky-100" : "bg-sky-100 bg-opacity-80 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:bg-opacity-80 dark:text-sky-100"}`}
     >
-      <img src='/vite.svg' />
-      <Menu
-        isMenuOpen={isMenuOpen}
-        setMenuOpen={setMenuOpen}
-      />
+      <div className="container m-auto flex items-center justify-between">
+        <img src="/vite.svg" />
+        <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+      </div>
     </header>
   );
 }
