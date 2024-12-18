@@ -49,7 +49,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           ></div>
         </button>
         <div
-          className={`menu-mobile absolute right-0 w-full py-8 transition-all duration-500 ease-out ${isMenuOpen ? "top-full bg-sky-100 bg-opacity-100 text-sky-950 opacity-100 dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none -top-full opacity-0"} `}
+          className={`menu-mobile right-0 w-full py-8 transition-all duration-500 ease-out ${isMenuOpen ? "absolute top-full w-1/2 bg-sky-100 bg-opacity-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none absolute -top-full opacity-0"} `}
         >
           <menu
             className={`menu-items flex flex-col items-center justify-start gap-2`}
@@ -75,7 +75,6 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                 test 4
               </a>
             </li>
-            <ThemeToggleButton className="absolute right-[5%] top-0"></ThemeToggleButton>
 
             <Button
               href={"#"}

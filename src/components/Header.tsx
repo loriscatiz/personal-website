@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Menu from "./Menu";
 import { throttle, debounce } from "../utils";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 function Header() {
   const [visibility, setVisibility] = useState(true);
@@ -40,13 +41,16 @@ function Header() {
     <header
       className={`header fixed top-0 grid min-h-20 w-full items-center transition-all duration-300 ease-out ${
         visibility || isMenuOpen ? "" : "-translate-y-full"
-      } ${visibility && isMenuOpen ? "bg-opacity-100 dark:bg-opacity-100" : ""} ${
+      } ${visibility && isMenuOpen ? "bg-opacity-60 backdrop-blur-sm" : ""} ${
         visibility && !isMenuOpen ? "bg-opacity-60 dark:bg-opacity-60" : ""
-      } ${isTransparent ? "bg-transparent text-sky-950 dark:text-sky-100" : "bg-sky-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100"}`}
+      } ${isTransparent && !isMenuOpen ? "bg-transparent text-sky-950 dark:text-sky-100" : "bg-sky-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100"}`}
     >
       <div className="container m-auto flex items-center justify-between">
         <img src="/vite.svg" />
-        <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+        <div className="flex items-center gap-4">
+          <ThemeToggleButton className="md:hidden"></ThemeToggleButton>
+          <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+        </div>
       </div>
     </header>
   );
