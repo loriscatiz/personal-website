@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 import Button from "./Button";
 import ThemeToggleButton from "./ThemeToggleButton";
@@ -13,23 +13,30 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
     setMenuOpen(!isMenuOpen); // Modifica diretta dello stato
   }
 
+  const menuRef = useRef<HTMLDivElement>(null);
+  const themeToggleRef = useRef<HTMLButtonElement>(null);
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest(".menu-mobile") && !target.closest(".hamburger")) {
+      const target = event.target as Node;
+      if (
+        menuRef.current && 
+        !menuRef.current.contains(target) &&
+        themeToggleRef.current &&
+        !themeToggleRef.current.contains(target)
+      ) {
         setMenuOpen(false);
       }
     };
-
+  
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
+  
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMenuOpen]);
-
   return (
     <>
       <div className="md:hidden">
@@ -39,16 +46,16 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           aria-label={`${isMenuOpen ? "Close the menu" : "Open the menu"}`}
         >
           <div
-            className={`top-hamburger ${isMenuOpen ? "transform" : ""}`}
+            className={`top-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100  transition-all duration-500 ${isMenuOpen ? "transform" : ""}`}
           ></div>
           <div
-            className={`middle-hamburger ${isMenuOpen ? "scale-0 duration-1000" : ""}`}
+            className={`middle-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-all duration-500 ${isMenuOpen ? "scale-0 duration-1000" : ""}`}
           ></div>
           <div
-            className={`bottom-hamburger ${isMenuOpen ? "transform" : ""}`}
+            className={`bottom-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-all duration-500 ${isMenuOpen ? "transform" : ""}`}
           ></div>
         </button>
-        <div
+        <div ref={menuRef}
           className={`menu-mobile right-0 w-full py-8 transition-all duration-500 ease-out ${isMenuOpen ? "absolute top-full w-1/2 bg-sky-100 bg-opacity-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none absolute -top-full opacity-0"} `}
         >
           <menu

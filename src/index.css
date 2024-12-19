@@ -40,9 +40,7 @@
   .hamburger {
     @apply flex aspect-square w-8 flex-col justify-center gap-2;
   }
-  :where(.top-hamburger, .middle-hamburger, .bottom-hamburger) {
-    @apply relative w-full flex-grow rounded bg-amber-500 transition-all duration-500;
-  }
+
   .bottom-hamburger {
     --tw-translate-y: calc(-1rem + 50%);
     --tw-rotate: 45deg;
