@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import About from "./components/About";
 import { ThemeProvider } from "./ThemeContext";
 import ThemeManager from "./ThemeManager";
+import ProjectCard from "./components/ProjectCard";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           ctaText={"Click me"}
           ctaHref={"#testing"}
         ></About>
+<Projects></Projects>
       </ThemeProvider>
     </>
   );
