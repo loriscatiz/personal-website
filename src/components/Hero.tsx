@@ -19,7 +19,7 @@ function Hero() {
             typeSpeed={70}
             backSpeed={100}
           ></Title>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <Button href={"#"} text="Primary" variant="primary"></Button>
             <Button href={"#"} text="Secondary" variant="secondary"></Button>
           </div>

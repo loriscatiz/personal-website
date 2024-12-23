@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, languages, categories, imgsrc }) => {
   return (
-    <div className="bg-sky-200 dark:bg-sky-900 shadow-md rounded-lg p-4 max-w-sm">
+    <div className="bg-sky-200 dark:bg-sky-900 shadow-md rounded-lg p-4 max-w-sm translate-y-0 transition-all">
       <img src={imgsrc} alt="" />
       <Title tag={"h3"} className={"text-2xl bg-red-500"} text={title}></Title>
       <p className="text-gray-600 mb-4">{description}</p>
