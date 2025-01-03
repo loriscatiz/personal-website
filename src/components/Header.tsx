@@ -5,29 +5,37 @@ import ThemeToggleButton from "./ThemeToggleButton";
 
 function Header() {
   const [visibility, setVisibility] = useState(true);
-  const [isMenuOpen, setMenuOpen] = useState(false); // Nuovo stato
+  const [isMenuOpen, setMenuOpen] = useState(false); // Menu state
   const lastScrollY = useRef(0);
   const [isTransparent, setTransparent] = useState(true);
+  const threshold = 30; // Adjust this value as needed
 
   // Handle visibility with throttle
-  const handleScrollVisibility = throttle(() => {  
-    if (window.scrollY > lastScrollY.current && !isMenuOpen) {
-      // Nascondi solo se il menu è chiuso
-      setVisibility(false);
-    } else {
-      setVisibility(true);
+  const handleScrollVisibility = throttle(() => {
+    const scrollY = window.scrollY;
+
+    if (Math.abs(scrollY - lastScrollY.current) > threshold) {
+      if (scrollY > lastScrollY.current && !isMenuOpen) {
+        // Hide header if scrolling down
+        setVisibility(false);
+      } else {
+        // Show header if scrolling up
+        setVisibility(true);
+      }
+      lastScrollY.current = scrollY;
     }
-    lastScrollY.current = window.scrollY;
   }, 100);
 
   // Handle transparency with debounce
   const handleScrollTransparency = debounce(() => {
     setTransparent(window.scrollY === 0);
-    if(window.scrollY === 0){ setVisibility(true)};
+    if (window.scrollY === 0) {
+      setVisibility(true);
+    }
   }, 100);
 
   useEffect(() => {
-    const handleScroll = () => { 
+    const handleScroll = () => {
       handleScrollVisibility();
       handleScrollTransparency();
     };
@@ -36,7 +44,7 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]); // Dipendenza aggiunta
+  }, [isMenuOpen]);
 
   return (
     <header

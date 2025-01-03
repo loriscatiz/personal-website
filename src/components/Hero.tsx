@@ -20,8 +20,8 @@ function Hero() {
             backSpeed={100}
           ></Title>
           <div className="flex gap-4 flex-wrap">
-            <Button href={"#"} text="Primary" variant="primary"></Button>
-            <Button href={"#"} text="Secondary" variant="secondary"></Button>
+            <Button href={"https://github.com/loriscatiz/"} text="Github" blank={true} variant="primary"></Button>
+            <Button href={"https://drive.google.com/file/d/1TTlyfddApCZr8dUdN-8UyPq-YXyenwkC/view?usp=drive_link"} blank={true} text="Resume" variant="secondary"></Button>
           </div>
         </div>
       </div>
