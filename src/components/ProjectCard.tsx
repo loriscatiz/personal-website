@@ -10,9 +10,9 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, languages, categories, imgsrc }) => {
   return (
-    <div className="bg-sky-200 dark:bg-sky-900 rounded-lg p-4 ">
+    <div className="bg-sky-100 dark:bg-sky-950 rounded-lg p-4 project-card relative">
   <img src={imgsrc} alt="" className="" />
-  <Title tag={"h3"} className={"text-2xl bg-red-500"} text={title}></Title>
+  <Title tag={"h3"} className={"text-2xl text-sky-900 dark:text-sky-200"} text={title}></Title>
   <p className="text-gray-600 mb-4">{description}</p>
   <div className="languages flex gap-2">
     {languages.map((language, index) => (

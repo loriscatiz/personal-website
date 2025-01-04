@@ -82,7 +82,7 @@ function Header() {
   </g>
 </svg>
         <div className="flex items-center gap-4">
-          <ThemeToggleButton className="md:hidden"></ThemeToggleButton>
+          <ThemeToggleButton className="lg:hidden"></ThemeToggleButton>
           <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         </div>
       </div>

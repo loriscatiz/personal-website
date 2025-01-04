@@ -39,7 +39,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
   }, [isMenuOpen]);
   return (
     <>
-      <div className="md:hidden overflow-y-scroll">
+      <div className="lg:hidden">
         <button
           onClick={handleIsOpen}
           className={`hamburger transition-all`}
@@ -92,7 +92,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           </menu>
         </div>
       </div>
-      <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 md:flex">
+      <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 lg:flex">
         <li className="menu-item">
           <a href="#1">test 1</a>
         </li>

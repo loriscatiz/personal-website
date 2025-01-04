@@ -13,7 +13,11 @@ interface Project {
 
 function Projects() {
   const projects: Project[] = [
-    { title: "Test", description: "Lorem", languages: ["html", "css"], categories: ["Front-end", "mobile"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+    { title: "Numeric system converter",
+       description: "A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.", 
+       languages: ["html", "css", "javascript"], 
+       categories: ["Front-end"],
+        imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
     { title: "Test2", description: "Lorem", languages: ["html", "Java"], categories: ["Front-end", "mobile"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
     { title: "Test3", description: "Lorem", languages: ["python"], categories: ["Front-end"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
     { title: "Test4", description: "Lorem", languages: ["html", "javascript"], categories: ["Back-end", "Database"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
@@ -57,8 +61,8 @@ function Projects() {
   };
 
   return (
-    <div className="bg-sky-100 dark:bg-sky-950">
-      <div className="max-w-3xl mx-auto">
+    <div className="bg-sky-200 dark:bg-sky-900">
+      <div className="container max-w-3xl mx-auto">
         <Title tag={"h2"} className={"text-2xl md:text-4xl text-center"} text="My projects"></Title>
 
 
