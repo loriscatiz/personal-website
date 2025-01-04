@@ -48,7 +48,7 @@ function Header() {
 
   return (
     <header
-      className={`header fixed top-0 grid min-h-20 w-full items-center transition-all duration-300 ease-out ${
+      className={`header fixed top-0 grid z-50 min-h-20 w-full items-center transition-all duration-300 ease-out ${
         visibility || isMenuOpen ? "" : "-translate-y-full"
       } ${visibility && isMenuOpen ? "backdrop-blur-sm" : ""} ${
         visibility && !isMenuOpen ? "bg-opacity-60 dark:bg-opacity-60" : ""

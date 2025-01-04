@@ -15,16 +15,16 @@ function Projects() {
   const projects: Project[] = [
     { title: "Numeric system converter",
        description: "A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.", 
-       languages: ["html", "css", "javascript"], 
+       languages: ["HTML", "CSS", "JavaScript"], 
        categories: ["Front-end"],
         imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
-    { title: "Test2", description: "Lorem", languages: ["html", "Java"], categories: ["Front-end", "mobile"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
-    { title: "Test3", description: "Lorem", languages: ["python"], categories: ["Front-end"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
-    { title: "Test4", description: "Lorem", languages: ["html", "javascript"], categories: ["Back-end", "Database"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+    { title: "Personal website", description: "Lorem", languages: [ "React", "HTML", "CSS", "JavaScript"], categories: ["Front-end", "mobile"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+    { title: "Test3", description: "Lorem", languages: ["Python"], categories: ["Front-end"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+    { title: "Test4", description: "Lorem", languages: ["HTML", "JavaScript"], categories: ["Back-end", "Database"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
   ];
 
-  const languageFilters = ["html", "css", "python", "javascript"];
-  const categoryFilters = ["Front-end", "Back-end", "Database", "mobile"];
+  const languageFilters = ["HTML", "CSS", "Python", "JavaScript", "React", "MySQL"];
+  const categoryFilters = ["Front-end", "Back-end", "Database", "Mobile"];
 
   const [filtered, setFiltered] = useState<Project[]>(projects);
   const [selectedLanguageFilters, setSelectedLanguageFilters] = useState<string[]>([]);
@@ -61,8 +61,8 @@ function Projects() {
   };
 
   return (
-    <div className="bg-sky-200 dark:bg-sky-900">
-      <div className="container max-w-3xl mx-auto">
+    <div className="bg-sky-200 dark:bg-sky-900 -z-10">
+      <div className="container mx-auto">
         <Title tag={"h2"} className={"text-2xl md:text-4xl text-center"} text="My projects"></Title>
 
 
@@ -99,7 +99,7 @@ function Projects() {
 
 
         {/* Filtered Project Cards */}
-        <motion.div layout className="grid gap-4 mt-10">
+        <motion.div layout className="grid gap-12 mt-10">
           <AnimatePresence>
             {filtered.map((project) => (
               <motion.div
