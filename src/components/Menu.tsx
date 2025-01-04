@@ -39,7 +39,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
   }, [isMenuOpen]);
   return (
     <>
-      <div className="md:hidden">
+      <div className="md:hidden overflow-y-scroll">
         <button
           onClick={handleIsOpen}
           className={`hamburger transition-all`}
@@ -56,10 +56,10 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           ></div>
         </button>
         <div ref={menuRef}
-          className={`menu-mobile right-0 w-full py-8 transition-all duration-500 ease-out ${isMenuOpen ? "absolute top-full w-1/2 bg-sky-100 bg-opacity-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none absolute -top-full opacity-0"} `}
+          className={`menu-mobile right-0 w-full py-8 landscape:py-4 transition-all duration-500 ease-out ${isMenuOpen ? "absolute top-full w-1/2 bg-sky-100 bg-opacity-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100" : "pointer-events-none absolute -top-full opacity-0"} `}
         >
           <menu
-            className={`menu-items flex flex-col items-center justify-start gap-2`}
+            className={`menu-items flex flex-col landscape:flex-row landscape:gap-8 justify-center landscape:overflow-x-auto items-center gap-2`}
             aria-hidden={isMenuOpen ? false : true}
           >
             <li className="menu-item">
