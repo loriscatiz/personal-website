@@ -7,7 +7,7 @@ function Header() {
   const [visibility, setVisibility] = useState(true);
   const [isMenuOpen, setMenuOpen] = useState(false); // Menu state
   const lastScrollY = useRef(0);
-  const [isTransparent, setTransparent] = useState(true);
+  const [isTransparent, setTransparent] = useState(scrollY == 0 ? true : false);
   const threshold = 30; // Adjust this value as needed
 
   // Handle visibility with throttle
@@ -48,7 +48,7 @@ function Header() {
 
   return (
     <header
-      className={`header fixed top-0 grid z-50 min-h-20 w-full items-center transition-all duration-300 ease-out ${
+      className={`header fixed top-0 grid z-50 min-h-20 w-full items-center transition-all duration-500 ease-out ${
         visibility || isMenuOpen ? "" : "-translate-y-full"
       } ${visibility && isMenuOpen ? "backdrop-blur-sm" : ""} ${
         visibility && !isMenuOpen ? "bg-opacity-60 dark:bg-opacity-60" : ""

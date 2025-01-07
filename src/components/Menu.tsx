@@ -46,13 +46,13 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
           aria-label={`${isMenuOpen ? "Close the menu" : "Open the menu"}`}
         >
           <div
-            className={`top-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100  transition-all duration-500 ${isMenuOpen ? "transform" : ""}`}
+            className={`top-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100  transition-transform duration-500 ${isMenuOpen ? "transform" : ""}`}
           ></div>
           <div
-            className={`middle-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-all duration-500 ${isMenuOpen ? "scale-0 duration-1000" : ""}`}
+            className={`middle-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-transform duration-500 ${isMenuOpen ? "scale-0 duration-1000" : ""}`}
           ></div>
           <div
-            className={`bottom-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-all duration-500 ${isMenuOpen ? "transform" : ""}`}
+            className={`bottom-hamburger relative w-full flex-grow rounded bg-sky-900 dark:bg-sky-100 transition-transform duration-500 ${isMenuOpen ? "transform" : ""}`}
           ></div>
         </button>
         <div ref={menuRef}
