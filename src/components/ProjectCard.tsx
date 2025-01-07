@@ -1,39 +1,87 @@
-import Title from "./Title";
+import Button from './Button'
+import Title from './Title'
 
 interface ProjectCardProps {
-  title: string; // Optional: Add a title for the project
-  description: string; // Optional: Add a short description for the project
-  languages: string[]; // The list of programming languages or tools
-  categories: string[]; // The list of categories
-  imgsrc: string;
-};
+    title: string // Optional: Add a title for the project
+    description: string // Optional: Add a short description for the project
+    languages: string[] // The list of programming languages or tools
+    categories: string[] // The list of categories
+    imgsrc: string
+    githubLink?: string
+    liveLink?: string
+}
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, languages, categories, imgsrc }) => {
-  return (
-    <div className="project-card max-w-3xl mx-auto relative z-0 ">
-      <div className="bg-sky-100 dark:bg-sky-950 rounded-[20px] p-[10px]">
-        <img src={imgsrc} alt="" className="rounded-t-[10px]" />
-        <div className=" px-6 py-4">
-          <Title tag={"h3"} className={"text-2xl text-sky-900 dark:text-sky-200"} text={title}></Title>
-          <p className="text-sky-950 dark:text-sky-100 mb-4">{description}</p>
-          <div className="languages flex gap-2">
-            {languages.map((language, index) => (
-              <div key={index} className="text-sm border-b-2 text-sky-950 dark:text-sky-100 border-b-indigo-700">
-                {language}
-              </div>
-            ))}
-          </div>
-          <div className="categories flex">
-            {categories.map((category, index) => (
-              <li key={index} className="">
-                {category}
-              </li>
-            ))}
-          </div>
+const ProjectCard: React.FC<ProjectCardProps> = ({
+    title,
+    description,
+    languages,
+    categories,
+    imgsrc,
+    githubLink,
+    liveLink,
+}) => {
+    return (
+        <div className="project-card relative z-0 mx-auto max-w-3xl">
+            <div className="rounded-[20px] bg-sky-100 p-[10px] dark:bg-sky-950">
+                <img src={imgsrc} alt="" className="rounded-t-[10px]" />
+                <div className="px-6 py-4">
+                    <Title
+                        tag={'h3'}
+                        className={'text-2xl text-sky-900 dark:text-sky-200'}
+                        text={title}
+                    ></Title>
+                    <p className="mb-4 text-sky-950 dark:text-sky-100">
+                        {description}
+                    </p>
+                    <div className="grid-flow-col md:grid md:grid-cols-2 md:grid-rows-2">
+                        <Title
+                            tag="h4"
+                            text="Languages: "
+                            className={'text-lg text-sky-900 dark:text-sky-200'}
+                        ></Title>
+                        <ul className="languages flex list-none gap-2">
+                            {languages.map((language, index) => (
+                                <span
+                                    key={index}
+                                    className="text-sm text-sky-950 dark:text-sky-100"
+                                >
+                                    {language}
+                                </span>
+                            ))}
+                        </ul>
+
+                        <Title
+                            tag="h4"
+                            text="Categories: "
+                            className={'text-lg text-sky-900 dark:text-sky-200'}
+                        ></Title>
+                        <ul className="categories flex list-none gap-2">
+                            {categories.map((category, index) => (
+                                <li
+                                    key={index}
+                                    className="text-sm text-sky-950 dark:text-sky-100"
+                                >
+                                    {category}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="mt-6 flex flex-wrap gap-x-6 gap-y-4">
+                        <Button
+                            text={'Github repo'}
+                            variant={'primary'}
+                            href={githubLink}
+                        ></Button>
+                        <Button
+                            text={'Live demo'}
+                            variant={'secondary'}
+                            href={liveLink}
+                        ></Button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default ProjectCard;
+export default ProjectCard
