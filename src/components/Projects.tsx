@@ -9,16 +9,26 @@ interface Project {
   languages: string[];
   categories: string[];
   imgsrc: string;
+  githubLink?: string;
+  liveLink?: string;
 }
 
 function Projects() {
   const projects: Project[] = [
-    { title: "Numeric system converter",
-       description: "A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.", 
-       languages: ["HTML", "CSS", "JavaScript"], 
-       categories: ["Front-end"],
-        imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
-    { title: "Personal website", description: "Lorem", languages: [ "React", "HTML", "CSS", "JavaScript"], categories: ["Front-end", "mobile"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+    {
+      title: "Numeric system converter",
+      description: "A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.",
+      languages: ["HTML", "CSS", "JavaScript"],
+      categories: ["Front-end"],
+      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+      githubLink: "https://github.com/loriscatiz/numeric-system-converter",
+      liveLink: "https://numeric-system-converter.netlify.app/"
+    },
+    { title: "Personal website", 
+      description: "Lorem", 
+      languages: ["React", "HTML", "CSS", "JavaScript"],
+      categories: ["Front-end", "mobile"],
+      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"},
     { title: "Test3", description: "Lorem", languages: ["Python"], categories: ["Front-end"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
     { title: "Test4", description: "Lorem", languages: ["HTML", "JavaScript"], categories: ["Back-end", "Database"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
   ];
@@ -116,6 +126,8 @@ function Projects() {
                   languages={project.languages}
                   categories={project.categories}
                   imgsrc={project.imgsrc}
+                  githubLink={project.githubLink}
+                  liveLink={project.liveLink}
                 />
               </motion.div>
             ))}

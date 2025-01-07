@@ -67,16 +67,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         </ul>
                     </div>
                     <div className="mt-6 flex flex-wrap gap-x-6 gap-y-4">
-                        <Button
-                            text={'Github repo'}
-                            variant={'primary'}
-                            href={githubLink}
-                        ></Button>
-                        <Button
-                            text={'Live demo'}
-                            variant={'secondary'}
-                            href={liveLink}
-                        ></Button>
+                        {githubLink &&
+                            <Button
+                                text={'Github repo'}
+                                variant={'primary'}
+                                href={githubLink}
+                                blank={true}
+                            ></Button>}
+
+                        {liveLink &&
+                            <Button
+                                text={'Live demo'}
+                                variant={'secondary'}
+                                href={liveLink}
+                                blank={true}
+                            ></Button>}
                     </div>
                 </div>
             </div>
