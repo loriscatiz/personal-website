@@ -8,6 +8,7 @@ interface Project {
   languages: string[];
   categories: string[];
   imgsrc: string;
+  hoverImgSrc?: string;
   githubLink?: string;
   liveLink?: string;
 }
@@ -19,7 +20,8 @@ function Projects() {
       description: "A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.",
       languages: ["HTML", "CSS", "JavaScript"],
       categories: ["Front-end"],
-      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+      imgsrc: "/src/assets/numeric-system-converter-0.jpg",
+      hoverImgSrc: "/src/assets/numeric-system-converter-1.JPG",
       githubLink: "https://github.com/loriscatiz/numeric-system-converter",
       liveLink: "https://numeric-system-converter.netlify.app/"
     },
@@ -136,6 +138,7 @@ function Projects() {
                   languages={project.languages}
                   categories={project.categories}
                   imgsrc={project.imgsrc}
+                  hoverimgsrc={project.hoverImgSrc}
                   githubLink={project.githubLink}
                   liveLink={project.liveLink}
                 />

@@ -1,4 +1,5 @@
 import Button from './Button'
+import ImgHover from './ImgHover'
 import Title from './Title'
 
 interface ProjectCardProps {
@@ -7,6 +8,7 @@ interface ProjectCardProps {
     languages: string[] 
     categories: string[] 
     imgsrc: string
+    hoverimgsrc?: string
     githubLink?: string
     liveLink?: string
 }
@@ -17,13 +19,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     languages,
     categories,
     imgsrc,
+    hoverimgsrc,
     githubLink,
     liveLink,
 }) => {
     return (
         <div className="project-card relative z-0 mx-auto max-w-3xl">
             <div className="rounded-[20px] bg-sky-100 p-[10px] dark:bg-sky-950">
-                <img src={imgsrc} alt="" className="rounded-t-[10px]" />
+
+                <ImgHover imgsrc={imgsrc} hoverimgsrc={hoverimgsrc} alt="" className="rounded-t-[10px]" /> 
+                
                 <div className="px-6 py-4">
                     <Title
                         tag={'h3'}
