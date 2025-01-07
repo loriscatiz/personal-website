@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import Title from "./Title";
-
 interface Project {
   title: string;
   description: string;
@@ -24,12 +23,23 @@ function Projects() {
       githubLink: "https://github.com/loriscatiz/numeric-system-converter",
       liveLink: "https://numeric-system-converter.netlify.app/"
     },
-    { title: "Personal website", 
-      description: "Lorem", 
+    {
+      title: "Personal website",
+      description: "Lorem",
       languages: ["React", "HTML", "CSS", "JavaScript"],
-      categories: ["Front-end", "mobile"],
-      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"},
-    { title: "Test3", description: "Lorem", languages: ["Python"], categories: ["Front-end"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
+      categories: ["Front-end"],
+      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+      githubLink: "https://github.com/loriscatiz/personal-website",
+      liveLink: "https://loriscatiz.netlify.app/"
+    },
+    {
+      title: "Library database",
+      description: "A normalized and scalable database schema for a library management system, designed to demonstrate database design and SQL skills. The schema includes tables for managing members, books, authors, reservations, borrowings, fines, and staff, ensuring data integrity and optimal query performance.",
+      languages: ["MySQL"],
+      categories: ["Database"],
+      imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+      githubLink: "https://github.com/loriscatiz/library"
+    },
     { title: "Test4", description: "Lorem", languages: ["HTML", "JavaScript"], categories: ["Back-end", "Database"], imgsrc: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" },
   ];
 
@@ -71,18 +81,18 @@ function Projects() {
   };
 
   return (
-    <div className="bg-sky-200 dark:bg-sky-900 -z-10">
+    <div className="bg-sky-200 dark:bg-sky-900">
       <div className="container mx-auto">
-        <Title tag={"h2"} className={"text-2xl md:text-4xl text-center"} text="My projects"></Title>
-
+        <Title tag={"h2"} className={"text-2xl md:text-4xl text-center dark:text-sky-200 text-sky-900"} text="My projects"></Title>
+        <p className="mt-4 text-xl text-center text-balance dark:text-sky-200 text-sky-900 max-w-5xl mx-auto">Explore my projects by using the filters below. Select one or more languages or categories to find projects that match your interests.</p>
 
         {/* Category Filters */}
-        <Title tag={"h3"} className={"text-lg md:text-2xl text-center"} text="Categories"></Title>
-        <div className="flex gap-2 flex-wrap justify-center">
+        <Title tag={"h3"} className={"text-lg md:text-2xl text-center mt-4"} text="Categories"></Title>
+        <div className="flex gap-2 flex-wrap justify-center mt-2">
           {categoryFilters.map((filter) => (
             <button
               key={filter}
-              className={`px-4 py-2 rounded ${selectedCategoryFilters.includes(filter) ? "bg-green-500 text-white" : "bg-gray-200"
+              className={`px-4 py-2 border-2 rounded border-sky-900 dark:border-sky-200 ${selectedCategoryFilters.includes(filter) ? "dark:bg-sky-200 bg-sky-900 text-sky-100 dark:text-sky-950" : "text-sky-950 dark:text-sky-100"
                 }`}
               onClick={() => toggleFilter(filter, "categories")}
             >
@@ -92,12 +102,12 @@ function Projects() {
         </div>
 
         {/* Language Filters */}
-        <Title tag={"h3"} className={"text-lg md:text-2xl text-center mt-8"} text="Languages"></Title>
-        <div className="flex gap-2 flex-wrap justify-center">
+        <Title tag={"h3"} className={"text-lg md:text-2xl text-center mt-4"} text="Languages"></Title>
+        <div className="flex gap-2 flex-wrap justify-center mt-2">
           {languageFilters.map((filter) => (
             <button
               key={filter}
-              className={`px-4 py-2 rounded ${selectedLanguageFilters.includes(filter) ? "bg-blue-500 text-white" : "bg-gray-200"
+              className={`px-4 py-2 border-2 rounded border-sky-900 dark:border-sky-200 ${selectedLanguageFilters.includes(filter) ? "dark:bg-sky-200 bg-sky-900 text-sky-100 dark:text-sky-950" : "text-sky-950 dark:text-sky-100"
                 }`}
               onClick={() => toggleFilter(filter, "languages")}
             >
@@ -133,6 +143,7 @@ function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+        {filtered.length == 0 && <p className="text-3xl text-center">The filtering returned 0 projects</p>}
       </div>
     </div>
   );

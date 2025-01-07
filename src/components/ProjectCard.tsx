@@ -2,10 +2,10 @@ import Button from './Button'
 import Title from './Title'
 
 interface ProjectCardProps {
-    title: string // Optional: Add a title for the project
-    description: string // Optional: Add a short description for the project
-    languages: string[] // The list of programming languages or tools
-    categories: string[] // The list of categories
+    title: string
+    description: string 
+    languages: string[] 
+    categories: string[] 
     imgsrc: string
     githubLink?: string
     liveLink?: string

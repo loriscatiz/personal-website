@@ -13,16 +13,16 @@
   .hero-wrapper {
     min-height: 80vh;
     background: linear-gradient(0deg,
-        rgba(219, 234, 254, 0.6),
-        rgba(219, 234, 254, 0.6)),
+        rgba(219, 234, 254, 0.75),
+        rgba(219, 234, 254, 0.75)),
       url(/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
     background-size: cover;
   }
 
   .dark .hero-wrapper {
     background: linear-gradient(0deg,
-        rgba(7, 47, 95, 0.7),
-        rgba(7, 47, 95, 0.7)),
+        rgba(7, 47, 95, 0.75),
+        rgba(7, 47, 95, 0.75)),
       url(/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
     background-size: cover;
   }
@@ -78,7 +78,7 @@ body {
 }
 
 .project-card::after {
-  filter: blur(4rem);
+  filter: blur(1rem);
   opacity: .5;
 }
 
