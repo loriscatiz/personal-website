@@ -4,9 +4,9 @@ import Title from './Title'
 
 interface ProjectCardProps {
     title: string
-    description: string 
-    languages: string[] 
-    categories: string[] 
+    description: string
+    languages: string[]
+    categories: string[]
     imgsrc: string
     hoverimgsrc?: string
     githubLink?: string
@@ -26,9 +26,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <div className="project-card relative z-0 mx-auto max-w-3xl">
             <div className="rounded-[20px] bg-sky-100 p-[10px] dark:bg-sky-950">
+                <ImgHover
+                    imgsrc={imgsrc}
+                    hoverimgsrc={hoverimgsrc}
+                    alt=""
+                    className=""
+                />
 
-                <ImgHover imgsrc={imgsrc} hoverimgsrc={hoverimgsrc} alt="" className="rounded-t-[10px]" /> 
-                
                 <div className="px-6 py-4">
                     <Title
                         tag={'h3'}
@@ -72,21 +76,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         </ul>
                     </div>
                     <div className="mt-6 flex flex-wrap gap-x-6 gap-y-4">
-                        {githubLink &&
+                        {githubLink && (
                             <Button
                                 text={'Github repo'}
                                 variant={'primary'}
                                 href={githubLink}
                                 blank={true}
-                            ></Button>}
+                            ></Button>
+                        )}
 
-                        {liveLink &&
+                        {liveLink && (
                             <Button
                                 text={'Live demo'}
                                 variant={'secondary'}
                                 href={liveLink}
                                 blank={true}
-                            ></Button>}
+                            ></Button>
+                        )}
                     </div>
                 </div>
             </div>
