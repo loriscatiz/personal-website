@@ -29,7 +29,7 @@ function Projects() {
         },
         {
             title: 'Personal website',
-            description: 'Lorem',
+            description: 'This react website, it includes filtering ',
             languages: ['React', 'CSS', 'JavaScript'],
             categories: ['Front-end'],
             imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
@@ -107,12 +107,12 @@ function Projects() {
     }
 
     return (
-        <div className="bg-sky-200 dark:bg-sky-900">
+        <div className="bg-sky-200 dark:bg-sky-900" id="projects">
             <div className="container mx-auto">
                 <Title
                     tag={'h2'}
                     className={
-                        'text-center text-2xl text-sky-900 dark:text-sky-200 md:text-4xl'
+                        'text-center text-2xl text-sky-950 dark:text-sky-100 md:text-4xl'
                     }
                     text="My projects"
                 ></Title>
@@ -126,7 +126,7 @@ function Projects() {
                 <Title
                     tag={'h3'}
                     className={
-                        'mt-4 text-center text-lg text-sky-900 dark:text-sky-200 md:text-2xl'
+                        'mt-4 text-center text-lg text-sky-950 dark:text-sky-100 md:text-2xl'
                     }
                     text="Categories"
                 ></Title>
@@ -136,8 +136,8 @@ function Projects() {
                             key={filter}
                             className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${
                                 selectedCategoryFilters.includes(filter)
-                                    ? 'bg-sky-900 text-sky-100 dark:bg-sky-200 dark:text-sky-950'
-                                    : 'text-sky-950 dark:text-sky-100'
+                                    ? 'bg-sky-900 text-sky-200 hover:bg-sky-950 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
+                                    : 'dark:hover-text-sky-900 text-sky-900 hover:bg-sky-900 hover:text-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-sky-900'
                             }`}
                             onClick={() => toggleFilter(filter, 'categories')}
                         >
@@ -150,7 +150,7 @@ function Projects() {
                 <Title
                     tag={'h3'}
                     className={
-                        'mt-4 text-center text-lg text-sky-900 dark:text-sky-200 md:text-2xl'
+                        'mt-4 text-center text-lg text-sky-950 dark:text-sky-100 md:text-2xl'
                     }
                     text="Languages"
                 ></Title>
@@ -160,8 +160,8 @@ function Projects() {
                             key={filter}
                             className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${
                                 selectedLanguageFilters.includes(filter)
-                                    ? 'bg-sky-900 text-sky-100 dark:bg-sky-200 dark:text-sky-950'
-                                    : 'text-sky-950 dark:text-sky-100'
+                                    ? 'bg-sky-900 text-sky-200 hover:bg-sky-950 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
+                                    : 'dark:hover-text-sky-900 text-sky-900 hover:bg-sky-900 hover:text-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-sky-900'
                             }`}
                             onClick={() => toggleFilter(filter, 'languages')}
                         >
@@ -197,7 +197,7 @@ function Projects() {
                     </AnimatePresence>
                 </motion.div>
                 {filtered.length == 0 && (
-                    <p className="text-center text-3xl">
+                    <p className="text-center text-3xl text-sky-900 dark:text-sky-200">
                         The filtering returned 0 projects
                     </p>
                 )}

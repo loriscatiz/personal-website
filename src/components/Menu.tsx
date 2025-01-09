@@ -46,13 +46,13 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                     aria-label={`${isMenuOpen ? 'Close the menu' : 'Open the menu'}`}
                 >
                     <div
-                        className={`top-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-100 ${isMenuOpen ? 'transform' : ''}`}
+                        className={`top-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-200 ${isMenuOpen ? 'transform' : ''}`}
                     ></div>
                     <div
-                        className={`middle-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-100 ${isMenuOpen ? 'scale-0 duration-1000' : ''}`}
+                        className={`middle-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-200 ${isMenuOpen ? 'scale-0 duration-1000' : ''}`}
                     ></div>
                     <div
-                        className={`bottom-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-100 ${isMenuOpen ? 'transform' : ''}`}
+                        className={`bottom-hamburger relative w-full flex-grow rounded bg-sky-900 transition-transform duration-500 dark:bg-sky-200 ${isMenuOpen ? 'transform' : ''}`}
                     ></div>
                 </button>
                 <div
@@ -64,38 +64,39 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                         aria-hidden={isMenuOpen ? false : true}
                     >
                         <li className="menu-item">
-                            <a href="#1" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#hi" tabIndex={isMenuOpen ? 0 : -1}>
                                 Hi
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#2" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#projects" tabIndex={isMenuOpen ? 0 : -1}>
                                 Projects
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#3" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#about" tabIndex={isMenuOpen ? 0 : -1}>
                                 About me
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#4" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#skills" tabIndex={isMenuOpen ? 0 : -1}>
                                 Skills
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#5" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#timeline" tabIndex={isMenuOpen ? 0 : -1}>
                                 Timeline
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#6">Contact</a>
+                            <a href="#contact">Contact</a>
                         </li>
 
                         <Button
-                            href={'#'}
-                            text="Prova"
+                            href={'https://github.com/loriscatiz/'}
+                            text="Github"
                             variant="primary"
+                            blank={true}
                             tabIndex={isMenuOpen ? 0 : -1}
                         ></Button>
                     </menu>
@@ -103,25 +104,30 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
             </div>
             <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 lg:flex">
                 <li className="menu-item">
-                    <a href="#1">Hi</a>
+                    <a href="#hi">Hi</a>
                 </li>
                 <li className="menu-item">
-                    <a href="#2">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li className="menu-item">
-                    <a href="#3">About me</a>
+                    <a href="#about">About me</a>
                 </li>
                 <li className="menu-item">
-                    <a href="#4">Skills</a>
+                    <a href="#skills">Skills</a>
                 </li>
                 <li className="menu-item">
-                    <a href="#5">Timeline</a>
+                    <a href="#timeline">Timeline</a>
                 </li>
                 <li className="menu-item">
-                    <a href="#6">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
                 <ThemeToggleButton></ThemeToggleButton>
-                <Button href={'#'} text="Prova" variant="primary"></Button>
+                <Button
+                    href={'https://github.com/loriscatiz/'}
+                    text="Github"
+                    variant="primary"
+                    blank={true}
+                ></Button>
             </menu>
         </>
     )

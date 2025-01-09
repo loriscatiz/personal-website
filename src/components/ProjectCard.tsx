@@ -36,23 +36,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <div className="px-6 py-4">
                     <Title
                         tag={'h3'}
-                        className={'text-2xl text-sky-900 dark:text-sky-200'}
+                        className={'text-2xl text-sky-950 dark:text-sky-100'}
                         text={title}
                     ></Title>
-                    <p className="mb-4 text-sky-950 dark:text-sky-100">
+                    <p className="mb-4 text-sky-900 dark:text-sky-200">
                         {description}
                     </p>
                     <div className="grid-flow-col md:grid md:grid-cols-2 md:grid-rows-2">
                         <Title
                             tag="h4"
                             text="Languages: "
-                            className={'text-lg text-sky-900 dark:text-sky-200'}
+                            className={'text-lg text-sky-950 dark:text-sky-100'}
                         ></Title>
                         <ul className="languages flex list-none gap-2">
                             {languages.map((language, index) => (
                                 <span
                                     key={index}
-                                    className="text-sm text-sky-950 dark:text-sky-100"
+                                    className="text-sm text-sky-900 dark:text-sky-200"
                                 >
                                     {language}
                                 </span>
@@ -62,13 +62,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         <Title
                             tag="h4"
                             text="Categories: "
-                            className={'text-lg text-sky-900 dark:text-sky-200'}
+                            className={'text-lg text-sky-950 dark:text-sky-100'}
                         ></Title>
                         <ul className="categories flex list-none gap-2">
                             {categories.map((category, index) => (
                                 <li
                                     key={index}
-                                    className="text-sm text-sky-950 dark:text-sky-100"
+                                    className="text-sm text-sky-900 dark:text-sky-200"
                                 >
                                     {category}
                                 </li>
