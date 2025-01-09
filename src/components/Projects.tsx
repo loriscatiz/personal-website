@@ -29,7 +29,7 @@ function Projects() {
         },
         {
             title: 'Personal website',
-            description: 'This react website, it includes filtering ',
+            description: 'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
             languages: ['React', 'CSS', 'JavaScript'],
             categories: ['Front-end'],
             imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
@@ -42,15 +42,19 @@ function Projects() {
                 'A normalized and scalable database schema for a library management system, designed to demonstrate database design and SQL skills. The schema includes tables for managing members, books, authors, reservations, borrowings, fines, and staff, ensuring data integrity and optimal query performance.',
             languages: ['MySQL'],
             categories: ['Database'],
-            imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
+            imgsrc: '/library-0.jpg',
+            hoverImgSrc: '/library-1.jpg',
             githubLink: 'https://github.com/loriscatiz/library',
+
         },
         {
-            title: 'Test4',
-            description: 'Lorem',
-            languages: ['HTML', 'JavaScript'],
-            categories: ['Back-end', 'Database'],
-            imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
+            title: 'Python Mini Projects',
+            description: 'A collection of beginner-friendly Python programs and games created while learning the language. Includes interactive terminal games and simple utility programs.',
+            languages: ['Python'],
+            categories: ['Back-end'],
+            imgsrc: '/python-mini-projects-0.jpg',
+            hoverImgSrc: '/python-mini-projects-1.jpg',
+            githubLink: 'https://github.com/loriscatiz/python-mini-projects'
         },
     ]
 
@@ -116,11 +120,9 @@ function Projects() {
                     }
                     text="My projects"
                 ></Title>
-                <p className="mx-auto mt-4 max-w-5xl text-balance text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">
-                    Explore my projects by using the filters below. Select one
-                    or more languages or categories to find projects that match
-                    your interests.
-                </p>
+                <p className="mx-auto mt-4 max-w-4xl  text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">
+                Use the filters below to explore my projects. Within a group (languages or categories), filters use OR logic, showing projects that match any selection. Between groups, filters use AND logic, displaying projects that match both. Leave filters blank to see all projects.
+                </p> 
 
                 {/* Category Filters */}
                 <Title
@@ -134,11 +136,10 @@ function Projects() {
                     {categoryFilters.map((filter) => (
                         <button
                             key={filter}
-                            className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${
-                                selectedCategoryFilters.includes(filter)
+                            className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${selectedCategoryFilters.includes(filter)
                                     ? 'bg-sky-900 text-sky-200 hover:bg-sky-950 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
                                     : 'dark:hover-text-sky-900 text-sky-900 hover:bg-sky-900 hover:text-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-sky-900'
-                            }`}
+                                }`}
                             onClick={() => toggleFilter(filter, 'categories')}
                         >
                             {filter}
@@ -158,11 +159,10 @@ function Projects() {
                     {languageFilters.map((filter) => (
                         <button
                             key={filter}
-                            className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${
-                                selectedLanguageFilters.includes(filter)
+                            className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${selectedLanguageFilters.includes(filter)
                                     ? 'bg-sky-900 text-sky-200 hover:bg-sky-950 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
                                     : 'dark:hover-text-sky-900 text-sky-900 hover:bg-sky-900 hover:text-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-sky-900'
-                            }`}
+                                }`}
                             onClick={() => toggleFilter(filter, 'languages')}
                         >
                             {filter}

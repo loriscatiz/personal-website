@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         className={'text-2xl text-sky-950 dark:text-sky-100'}
                         text={title}
                     ></Title>
-                    <p className="mb-4 text-sky-900 dark:text-sky-200">
+                    <p className="mb-4 text-lg text-sky-900 dark:text-sky-200">
                         {description}
                     </p>
                     <div className="grid-flow-col md:grid md:grid-cols-2 md:grid-rows-2">
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             {languages.map((language, index) => (
                                 <span
                                     key={index}
-                                    className="text-sm text-sky-900 dark:text-sky-200"
+                                    className="text-base text-sky-900 dark:text-sky-200"
                                 >
                                     {language}
                                 </span>
@@ -68,7 +68,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             {categories.map((category, index) => (
                                 <li
                                     key={index}
-                                    className="text-sm text-sky-900 dark:text-sky-200"
+                                    className="text-base text-sky-900 dark:text-sky-200"
                                 >
                                     {category}
                                 </li>
