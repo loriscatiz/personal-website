@@ -13,8 +13,8 @@ export default function ThemeToggleButton({ className }: Props) {
             <button
                 ref={themeToggleRef}
                 onClick={toggleTheme}
-                className={`"themeToggleButton dark:border-inherit" grid aspect-square place-items-center rounded-full border-2 border-solid bg-transparent p-1 transition-all ${theme === 'dark' ? 'border-sky-200' : 'border-sky-900'} ${className}`}
-                aria-value={
+                className={`"themeToggleButton dark:border-inherit" grid aspect-square place-items-center rounded-full border-2 border-solid bg-transparent p-1 lg:hover:scale-110 lg:focus-within:scale-110 transition-transform  ${theme === 'dark' ? 'border-sky-200' : 'border-sky-900'} ${className}`}
+                aria-label={
                     theme === 'dark'
                         ? 'change to light theme'
                         : 'change to dark theme'

@@ -16,6 +16,15 @@ interface Project {
 function Projects() {
     const projects: Project[] = [
         {
+            title: 'Personal website',
+            description: 'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
+            languages: ['React', 'CSS', 'JavaScript'],
+            categories: ['Front-end'],
+            imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
+            githubLink: 'https://github.com/loriscatiz/personal-website',
+            liveLink: 'https://loriscatiz.netlify.app/',
+        },
+        {
             title: 'Numeric system converter',
             description:
                 'A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.',
@@ -26,15 +35,15 @@ function Projects() {
             githubLink:
                 'https://github.com/loriscatiz/numeric-system-converter',
             liveLink: 'https://numeric-system-converter.netlify.app/',
-        },
+        },  
         {
-            title: 'Personal website',
-            description: 'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
-            languages: ['React', 'CSS', 'JavaScript'],
-            categories: ['Front-end'],
-            imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
-            githubLink: 'https://github.com/loriscatiz/personal-website',
-            liveLink: 'https://loriscatiz.netlify.app/',
+            title: 'Python Mini Projects',
+            description: 'A collection of beginner-friendly Python programs and games created while learning the language. Includes interactive terminal games and simple utility programs.',
+            languages: ['Python'],
+            categories: ['Back-end'],
+            imgsrc: '/python-mini-projects-0.jpg',
+            hoverImgSrc: '/python-mini-projects-1.jpg',
+            githubLink: 'https://github.com/loriscatiz/python-mini-projects'
         },
         {
             title: 'Library database',
@@ -47,15 +56,7 @@ function Projects() {
             githubLink: 'https://github.com/loriscatiz/library',
 
         },
-        {
-            title: 'Python Mini Projects',
-            description: 'A collection of beginner-friendly Python programs and games created while learning the language. Includes interactive terminal games and simple utility programs.',
-            languages: ['Python'],
-            categories: ['Back-end'],
-            imgsrc: '/python-mini-projects-0.jpg',
-            hoverImgSrc: '/python-mini-projects-1.jpg',
-            githubLink: 'https://github.com/loriscatiz/python-mini-projects'
-        },
+       
     ]
 
     const languageFilters = [
@@ -137,8 +138,8 @@ function Projects() {
                         <button
                             key={filter}
                             className={`rounded border-2 border-sky-900 px-4 py-2 dark:border-sky-200 ${selectedCategoryFilters.includes(filter)
-                                    ? 'bg-sky-900 text-sky-200 hover:bg-sky-950 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
-                                    : 'dark:hover-text-sky-900 text-sky-900 hover:bg-sky-900 hover:text-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-sky-900'
+                                    ? 'bg-sky-900 text-sky-200 dark:bg-sky-200 dark:text-sky-900 hover:dark:bg-sky-100'
+                                    : ' text-sky-900 hover:bg-sky-900 hover:scale-110 hover:text-sky-200 dark:text-sky-200 '
                                 }`}
                             onClick={() => toggleFilter(filter, 'categories')}
                         >

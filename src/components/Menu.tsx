@@ -64,32 +64,32 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                         aria-hidden={isMenuOpen ? false : true}
                     >
                         <li className="menu-item">
-                            <a href="#hi" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#hi" tabIndex={isMenuOpen ? 0 : -1} onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>
                                 Hi
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#projects" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#projects" tabIndex={isMenuOpen ? 0 : -1} onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>
                                 Projects
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#about" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#about" tabIndex={isMenuOpen ? 0 : -1} onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>
                                 About me
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#skills" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#skills" tabIndex={isMenuOpen ? 0 : -1} onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>
                                 Skills
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#timeline" tabIndex={isMenuOpen ? 0 : -1}>
+                            <a href="#timeline" tabIndex={isMenuOpen ? 0 : -1} onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>
                                 Timeline
                             </a>
                         </li>
                         <li className="menu-item">
-                            <a href="#contact">Contact</a>
+                            <a href="#contact" onClick={handleIsOpen} aria-hidden={isMenuOpen ? false : true}>Contact</a>
                         </li>
 
                         <Button
@@ -98,6 +98,8 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                             variant="primary"
                             blank={true}
                             tabIndex={isMenuOpen ? 0 : -1}
+                            ariaHidden={isMenuOpen ? false : true}
+                            onClick = {handleIsOpen}
                         ></Button>
                     </menu>
                 </div>

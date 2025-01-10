@@ -38,6 +38,10 @@
         background-size: cover;
     }
 
+    .menu-item{
+        @apply uppercase tracking-widest hover:scale-110 focus-within:scale-110 transition-transform
+    }
+
     .hero-content {
         @apply container m-auto flex flex-col items-start gap-4 text-5xl font-black lg:gap-8 lg:text-7xl;
     }
