@@ -4,7 +4,7 @@ function Hero() {
     return (
         <>
             <div
-                className="hero-wrapper py-32 text-sky-950 dark:text-sky-100"
+                className="hero-wrapper py-32 text-sky-950 dark:text-sky-100 rounded-br-[300px]"
                 id="hi"
             >
                 <div className="hero-content container m-auto flex flex-col items-start gap-4 text-5xl font-black lg:gap-8 lg:text-7xl">

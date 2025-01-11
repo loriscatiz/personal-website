@@ -14,9 +14,9 @@ interface AboutProps {
 function About({ title, subtitle, img, text, ctaText, ctaHref }: AboutProps) {
     return (
         <>
-            <div className="bg-sky-200 py-24 dark:bg-sky-900" id="about">
+            <div className="bg-sky-200 pt-24 dark:bg-sky-900">
                 <div className="container grid lg:grid-cols-2 lg:gap-8">
-                    <img src={img} alt="" />
+                    <img src={img} alt="" className='-mt-32 w-full rounded-xl shadow-lg' id='about'/>
                     <div className="flex flex-col items-start">
                         <Title
                             text={title}

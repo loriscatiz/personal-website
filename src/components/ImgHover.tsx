@@ -15,7 +15,7 @@ const ImageHover: React.FC<ImageHoverProps> = ({
 }) => {
     return (
         <div
-            className={`relative w-full overflow-clip rounded-t-[10px] ${className}`}
+            className={`relative w-full overflow-clip shadow-lg rounded-t-[10px] ${className}`}
         >
             <div
                 style={{

@@ -30,16 +30,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     imgsrc={imgsrc}
                     hoverimgsrc={hoverimgsrc}
                     alt=""
-                    className=""
+                  
                 />
 
-                <div className="px-6 py-4">
+                <div className="px-3 lg:px-6 py-4">
                     <Title
                         tag={'h3'}
                         className={'text-2xl text-sky-950 dark:text-sky-100'}
                         text={title}
                     ></Title>
-                    <p className="mb-4 text-lg text-sky-900 dark:text-sky-200">
+                    <p className="mt-2 mb-4 text-lg text-sky-900 dark:text-sky-200">
                         {description}
                     </p>
                     <div className="grid-flow-col md:grid md:grid-cols-2 md:grid-rows-2">

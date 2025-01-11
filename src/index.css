@@ -26,6 +26,7 @@
             ),
             url(/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
         background-size: cover;
+        box-shadow: 0 0 0 9999px #bae6fd;
     }
 
     .dark .hero-wrapper {
@@ -36,6 +37,7 @@
             ),
             url(/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
         background-size: cover;
+        box-shadow: 0 0 0 9999px #0c4a6e ;
     }
 
     .menu-item{
@@ -64,10 +66,6 @@
 }
 
 /*Test*/
-
-body {
-    min-height: 500vh;
-}
 
 .menu-mobile {
     will-change: transform, opacity;
