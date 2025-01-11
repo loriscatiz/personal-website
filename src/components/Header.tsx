@@ -1,53 +1,66 @@
 import { useEffect, useState, useRef } from 'react'
 import Menu from './Menu'
-import { throttle, debounce } from '../utils'
+import { throttle } from '../utils'
 import ThemeToggleButton from './ThemeToggleButton'
 
 function Header() {
     const [visibility, setVisibility] = useState(true)
-    const [isMenuOpen, setMenuOpen] = useState(false) // Menu state
+    const [isMenuOpen, setMenuOpen] = useState(false)
     const lastScrollY = useRef(0)
-    const [isTransparent, setTransparent] = useState(
-        scrollY == 0 ? true : false
-    )
-    const threshold = 30 // Adjust this value as needed
+    const isNavigating = useRef(false)
+    const [isTransparent, setTransparent] = useState(window.scrollY === 0)
+    const threshold = 30
 
-    // Handle visibility with throttle
+    // Handle scroll visibility based on user action
     const handleScrollVisibility = throttle(() => {
+        if (isNavigating.current) return
+
         const scrollY = window.scrollY
 
         if (Math.abs(scrollY - lastScrollY.current) > threshold) {
             if (scrollY > lastScrollY.current && !isMenuOpen) {
-                // Hide header if scrolling down
-                setVisibility(false)
+                setVisibility(false) // Scrolling down
             } else {
-                // Show header if scrolling up
-                setVisibility(true)
+                setVisibility(true) // Scrolling up
             }
             lastScrollY.current = scrollY
         }
     }, 100)
 
-    // Handle transparency with debounce
-    const handleScrollTransparency = debounce(() => {
-        setTransparent(window.scrollY === 0)
-        if (window.scrollY === 0) {
-            setVisibility(true)
-        }
-    }, 100)
+    const handleNavClick = () => {
+        isNavigating.current = true
+        setVisibility(true) // Ensure the header is visible during navigation
+        setTimeout(() => {
+            isNavigating.current = false
+        }, 1000)
+    }
 
     useEffect(() => {
         const handleScroll = () => {
             handleScrollVisibility()
-            handleScrollTransparency()
+
+            // Update transparency
+            setTransparent(window.scrollY === 0)
+            if (window.scrollY === 0) {
+                setVisibility(true) // Ensure header is visible at the top
+            }
         }
 
         window.addEventListener('scroll', handleScroll)
+
+        // Attach click handlers to navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]')
+        navLinks.forEach((link) =>
+            link.addEventListener('click', handleNavClick)
+        )
+
         return () => {
             window.removeEventListener('scroll', handleScroll)
+            navLinks.forEach((link) =>
+                link.removeEventListener('click', handleNavClick)
+            )
         }
-    }, [isMenuOpen])
-
+    }, [])
     return (
         <header
             className={`header fixed top-0 z-50 grid min-h-20 w-full items-center transition-all duration-500 ease-out ${
