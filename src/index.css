@@ -63,11 +63,12 @@
         --tw-translate-y: calc(1rem - 50%);
         --tw-rotate: -45deg;
     }
-
-    .skills-grid{
-        display: grid;
-        grid-template-columns: 20% 1fr;
+    @media screen and (min-width: 768px) {
+        .skills-grid{
+            grid-template-columns: 20% 1fr;
+        }
     }
+
 }
 
 /*Test*/

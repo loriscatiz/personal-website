@@ -32,6 +32,7 @@ function Header() {
         setVisibility(true) // Ensure the header is visible during navigation
         setTimeout(() => {
             isNavigating.current = false
+            lastScrollY.current = window.scrollY
         }, 1000)
     }
 

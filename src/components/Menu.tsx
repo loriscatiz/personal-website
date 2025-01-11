@@ -60,10 +60,10 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                     className={`menu-mobile right-0 w-full py-8 transition-all duration-500 ease-out landscape:py-4 ${isMenuOpen ? 'absolute top-full w-1/2 bg-sky-100 bg-opacity-100 text-sky-950 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-100' : 'pointer-events-none absolute -translate-y-full opacity-0'} `}
                 >
                     <menu
-                        className={`menu-items flex flex-col items-center justify-center gap-2 landscape:flex-row landscape:gap-8 landscape:overflow-x-auto`}
+                        className={`menu-items flex flex-col items-center justify-start gap-4 landscape:flex-row landscape:gap-8 landscape:overflow-x-auto landscape:px-8`}
                         aria-hidden={isMenuOpen ? false : true}
                     >
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#hi"
                                 tabIndex={isMenuOpen ? 0 : -1}
@@ -73,7 +73,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                                 Hi
                             </a>
                         </li>
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#about"
                                 tabIndex={isMenuOpen ? 0 : -1}
@@ -83,7 +83,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                                 About me
                             </a>
                         </li>
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#projects"
                                 tabIndex={isMenuOpen ? 0 : -1}
@@ -93,8 +93,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                                 Projects
                             </a>
                         </li>
-
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#skills"
                                 tabIndex={isMenuOpen ? 0 : -1}
@@ -104,7 +103,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                                 Skills
                             </a>
                         </li>
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#timeline"
                                 tabIndex={isMenuOpen ? 0 : -1}
@@ -114,7 +113,7 @@ function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
                                 Timeline
                             </a>
                         </li>
-                        <li className="menu-item">
+                        <li className="menu-item whitespace-nowrap">
                             <a
                                 href="#contact"
                                 onClick={handleIsOpen}
