@@ -6,10 +6,10 @@ import Button from './Button'
 function About() {
     return (
         <>
-            <div className="bg-sky-200 pt-24 dark:bg-sky-900">
+            <div className="bg-sky-100 pt-24 pb-16 dark:bg-sky-950">
                 <div className="container grid lg:grid-cols-2 lg:gap-8">
-                    <img src='https://placehold.co/600x600' alt="Loris Catizzone" className='-mt-32 w-full rounded-xl shadow-lg' id='about' />
-                    <div className="flex flex-col items-start">
+                    <img src='https://placehold.co/600x600' alt="Loris Catizzone" className='-mt-32 scroll-m-12 w-full rounded-xl shadow-lg' id='about' />
+                    <div className="mt-6 lg:mt-0 flex flex-col items-start">
                         <Title
                             text='About me'
                             tag={'h2'}

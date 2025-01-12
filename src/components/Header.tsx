@@ -99,14 +99,20 @@ function Header() {
     }, [])
     return (
         <header
-            className={`header fixed top-0 z-50 grid min-h-20 w-full items-center transition-all duration-500 ease-out ${
-                visibility || isMenuOpen ? '' : '-translate-y-full'
-            } ${visibility && isMenuOpen ? 'backdrop-blur-sm' : ''} ${
-                visibility && !isMenuOpen
-                    ? 'bg-opacity-60 dark:bg-opacity-60'
-                    : ''
-            } ${isTransparent && !isMenuOpen ? 'bg-transparent text-sky-900 dark:text-sky-200' : 'bg-sky-100 text-sky-900 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-200'}`}
-        >
+        className={`header fixed top-0 z-50 grid min-h-20 w-full items-center transition-all duration-500 ease-out
+        ${isMenuOpen ? 'bg-opacity-100 dark:bg-opacity-100' : ''} 
+        ${!visibility && !isMenuOpen ? '-translate-y-full' : ''}
+        ${
+            visibility && !isMenuOpen
+                ? 'bg-opacity-60 dark:bg-opacity-60'
+                : ''
+        }
+        ${
+            isTransparent && !isMenuOpen
+                ? 'bg-transparent text-sky-900 dark:text-sky-200'
+                : 'bg-sky-100 text-sky-900 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-200'
+        }`}
+    >
             <div className="container m-auto flex items-center justify-between">
                 <svg
                     version="1.1"

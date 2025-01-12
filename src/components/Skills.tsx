@@ -145,7 +145,7 @@ function Skills() {
 
 
 
-    return <div className="skills-wrapper" id="skills">
+    return <div className="skills-wrapper py-16" id="skills">
         <div className="container">
             <Title tag={"h2"} className="text-center text-2xl text-sky-950 dark:text-sky-100 md:text-4xl" text="My Skills"></Title>
             <p className="mx-auto mt-4 text-pretty text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">Here are the tools and technologies I rely on to bring projects to life. From the UI design to the frontend, from the ER diagrams to the backend functionalities. Each skill plays a role in creating efficient solutions.</p>
