@@ -19,7 +19,7 @@ function Projects() {
             title: 'Personal website',
             description: 'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
             languages: ['React', 'CSS', 'JavaScript'],
-            categories: ['Front-end'],
+            categories: ['Frontend'],
             imgsrc: '/ilya-pavlov-OqtafYT5kTw-unsplash.jpg',
             githubLink: 'https://github.com/loriscatiz/personal-website',
             liveLink: 'https://loriscatiz.netlify.app/',
@@ -29,7 +29,7 @@ function Projects() {
             description:
                 'A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.',
             languages: ['HTML', 'CSS', 'JavaScript'],
-            categories: ['Front-end'],
+            categories: ['Frontend'],
             imgsrc: '/numeric-system-converter-0.JPG',
             hoverImgSrc: '/numeric-system-converter-1.JPG',
             githubLink:
@@ -68,8 +68,8 @@ function Projects() {
         'MySQL',
     ]
     const categoryFilters = [
-        'Front-end',
-        'Back-end',
+        'Frontend',
+        'Backend',
         'Database',
         'General'
     ]

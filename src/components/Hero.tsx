@@ -15,8 +15,8 @@ function Hero() {
                         preText="Hi, i'm Loris, and i am a "
                         preTextClassName={'md:text-2xl text-lg'}
                         reactTypedStrings={[
-                            'Front-end',
-                            'Back-end',
+                            'Frontend',
+                            'Backend',
                             'Full stack',
                         ]}
                         postText="Developer"
