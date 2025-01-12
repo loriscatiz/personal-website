@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Menu from './Menu'
-import { debounce, throttle } from '../utils'
+import { throttle } from '../utils'
 import ThemeToggleButton from './ThemeToggleButton'
 
 function Header() {
@@ -18,6 +18,9 @@ function Header() {
   const handleResizing = throttle(() => {
     console.log("Resizing window");
     isResizing.current = true;
+    if (window.innerWidth >= 1024) {
+        setMenuOpen(false); // Close the mobile menu on desktop
+    }
 
     // Clear any existing timeout to avoid overlapping
     if (timeoutId.current) {

@@ -2,24 +2,83 @@ import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'r
 
 import Button from './Button'
 import ThemeToggleButton from './ThemeToggleButton'
+import { text } from 'framer-motion/client'
 
 interface MenuProps {
     isMenuOpen: boolean
     setMenuOpen: Dispatch<SetStateAction<boolean>>
     lastScrollY: MutableRefObject<number>
     setHeaderVisibility: React.Dispatch<React.SetStateAction<boolean>>
-    
+
 }
 
 function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: MenuProps) {
-    function handleIsOpen() {
-        setMenuOpen(!isMenuOpen) // Modifica diretta dello stato
-        lastScrollY.current = scrollY
-        setHeaderVisibility(true)
+
+    const menuItems = [
+        {
+            href: "#hi",
+            text: "Hi"
+        },
+        {
+            href: "#about",
+            text: "About me"
+        },
+        {
+            href: "#projects",
+            text: "Projects"
+        },
+        {
+            href: "#skills",
+            text: "Skills"
+        },
+        {
+            href: "#timeline",
+            text: "Timeline"
+        },
+        {
+            href: "#contact",
+            text: "Contact"
+        },
+    ]
+
+    const menuCta = {
+        href: 'https://github.com/loriscatiz/',
+        text: 'Github',
     }
+    
+       
+
+
+            function handleIsOpen() {
+                setMenuOpen(!isMenuOpen) // Modifica diretta dello stato
+                lastScrollY.current = scrollY
+                setHeaderVisibility(true)
+            }
 
     const menuRef = useRef<HTMLDivElement>(null)
     const themeToggleRef = useRef<HTMLButtonElement>(null)
+
+    const mapMenuItems = function (menuItems: { href: string, text: string }[], mobile: boolean) {
+        if (mobile) {
+            return menuItems.map((e, i) => {
+                return <li className="menu-item whitespace-nowrap" key={"mobile-" + i}> 
+                    <a
+                        href={e.href}
+                        tabIndex={isMenuOpen ? 0 : -1}
+                        onClick={handleIsOpen}
+                        aria-hidden={isMenuOpen ? false : true}
+                    >
+                        {e.text}
+                    </a>
+                </li>
+            })
+        }
+        return menuItems.map((e, i) => {
+            return <li className="menu-item" key = {"desktop" + i}>
+                <a href={e.href}>{e.text}</a>
+            </li>
+        })
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -68,69 +127,11 @@ function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: Men
                         className={`menu-items flex flex-col items-center justify-start gap-4 landscape:flex-row landscape:gap-8 landscape:overflow-x-auto landscape:px-8`}
                         aria-hidden={isMenuOpen ? false : true}
                     >
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#hi"
-                                tabIndex={isMenuOpen ? 0 : -1}
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                Hi
-                            </a>
-                        </li>
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#about"
-                                tabIndex={isMenuOpen ? 0 : -1}
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                About me
-                            </a>
-                        </li>
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#projects"
-                                tabIndex={isMenuOpen ? 0 : -1}
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                Projects
-                            </a>
-                        </li>
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#skills"
-                                tabIndex={isMenuOpen ? 0 : -1}
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                Skills
-                            </a>
-                        </li>
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#timeline"
-                                tabIndex={isMenuOpen ? 0 : -1}
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                Timeline
-                            </a>
-                        </li>
-                        <li className="menu-item whitespace-nowrap">
-                            <a
-                                href="#contact"
-                                onClick={handleIsOpen}
-                                aria-hidden={isMenuOpen ? false : true}
-                            >
-                                Contact
-                            </a>
-                        </li>
+                        {mapMenuItems(menuItems, true)}
 
                         <Button
-                            href={'https://github.com/loriscatiz/'}
-                            text="Github"
+                            href={menuCta.href}
+                            text={menuCta.text}
                             variant="primary"
                             blank={true}
                             tabIndex={isMenuOpen ? 0 : -1}
@@ -141,28 +142,11 @@ function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: Men
                 </div>
             </div>
             <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 lg:flex">
-                <li className="menu-item">
-                    <a href="#hi">Hi</a>
-                </li>
-                <li className="menu-item">
-                    <a href="#about">About me</a>
-                </li>
-                <li className="menu-item">
-                    <a href="#projects">Projects</a>
-                </li>
-                <li className="menu-item">
-                    <a href="#skills">Skills</a>
-                </li>
-                <li className="menu-item">
-                    <a href="#timeline">Timeline</a>
-                </li>
-                <li className="menu-item">
-                    <a href="#contact">Contact</a>
-                </li>
+               {mapMenuItems(menuItems, false)}
                 <ThemeToggleButton></ThemeToggleButton>
                 <Button
-                    href={'https://github.com/loriscatiz/'}
-                    text="Github"
+                    href={menuCta.href}
+                    text={menuCta.text}
                     variant="primary"
                     blank={true}
                 ></Button>
