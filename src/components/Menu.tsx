@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'react'
 
 import Button from './Button'
 import ThemeToggleButton from './ThemeToggleButton'
@@ -6,11 +6,16 @@ import ThemeToggleButton from './ThemeToggleButton'
 interface MenuProps {
     isMenuOpen: boolean
     setMenuOpen: Dispatch<SetStateAction<boolean>>
+    lastScrollY: MutableRefObject<number>
+    setHeaderVisibility: React.Dispatch<React.SetStateAction<boolean>>
+    
 }
 
-function Menu({ isMenuOpen, setMenuOpen }: MenuProps) {
+function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: MenuProps) {
     function handleIsOpen() {
         setMenuOpen(!isMenuOpen) // Modifica diretta dello stato
+        lastScrollY.current = scrollY
+        setHeaderVisibility(true)
     }
 
     const menuRef = useRef<HTMLDivElement>(null)

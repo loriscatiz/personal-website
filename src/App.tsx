@@ -14,16 +14,7 @@ function App() {
                 <Header></Header>
                 <Hero></Hero>
 
-                <About
-                    title="About me"
-                    subtitle="I'm a passionate developer"
-                    img={'https://picsum.photos/id/1043/800/600'}
-                    text={
-                        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque vel rem enim laborum amet placeat voluptatibus minus atque veniam, velit hic ut! Veritatis alias iste atque voluptas quasi sapiente ipsum!'
-                    }
-                    ctaText={'Click me'}
-                    ctaHref={'#testing'}
-                ></About>
+                <About></About>
                 <Projects></Projects>
                 <Skills></Skills>
             </ThemeProvider>

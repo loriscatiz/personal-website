@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Menu from './Menu'
-import { throttle } from '../utils'
+import { debounce, throttle } from '../utils'
 import ThemeToggleButton from './ThemeToggleButton'
 
 function Header() {
@@ -10,12 +10,36 @@ function Header() {
     const isNavigating = useRef(false)
     const [isTransparent, setTransparent] = useState(window.scrollY === 0)
     const threshold = 30
+    const isResizing = useRef(false)
+    const timeoutId = useRef<number | null>(null); // To manage setTimeout calls
+    const loadThreshold = useRef(true);
+
+  // Handles window resize
+  const handleResizing = throttle(() => {
+    console.log("Resizing window");
+    isResizing.current = true;
+
+    // Clear any existing timeout to avoid overlapping
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    }
+
+    // Set a new timeout to reset `isResizing`
+    timeoutId.current = window.setTimeout(() => {
+      isResizing.current = false;
+      console.log("Resize complete");
+    }, 1000);
+  }, 500)
+
+    window.addEventListener('resize', handleResizing)
+
 
     // Handle scroll visibility based on user action
     const handleScrollVisibility = throttle(() => {
-        if (isNavigating.current) return
-
+        if (isNavigating.current || isResizing.current || loadThreshold.current) return
+        
         const scrollY = window.scrollY
+        
 
         if (Math.abs(scrollY - lastScrollY.current) > threshold) {
             if (scrollY > lastScrollY.current && !isMenuOpen) {
@@ -46,8 +70,14 @@ function Header() {
                 setVisibility(true) // Ensure header is visible at the top
             }
         }
+        setTimeout(() => {
+            loadThreshold.current = false;
+            lastScrollY.current = window.scrollY
+        }, 1000);
+    
 
         window.addEventListener('scroll', handleScroll)
+        window.addEventListener('resize', handleResizing)
 
         // Attach click handlers to navigation links
         const navLinks = document.querySelectorAll('a[href^="#"]')
@@ -57,6 +87,8 @@ function Header() {
 
         return () => {
             window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleResizing)
+            
             navLinks.forEach((link) =>
                 link.removeEventListener('click', handleNavClick)
             )
@@ -117,7 +149,7 @@ function Header() {
                 </svg>
                 <div className="flex items-center gap-4">
                     <ThemeToggleButton className="lg:hidden"></ThemeToggleButton>
-                    <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+                    <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} lastScrollY = {lastScrollY} setHeaderVisibility={setVisibility}/>
                 </div>
             </div>
         </header>
