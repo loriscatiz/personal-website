@@ -82,7 +82,8 @@
 }
 
 .project-card::before,
-.project-card::after {
+.project-card::after,
+.skills-grid::before {
     content: '';
     position: absolute;
     will-change: background-image;
@@ -99,7 +100,8 @@
     border-radius: 30px;
 }
 
-.project-card::after {
+.project-card::after,
+.skills-grid::after {
     filter: blur(1rem);
     opacity: 0.5;
 }

@@ -116,7 +116,7 @@ function Skills() {
             name: 'Illustrator',
             imgSrc: '/illustrator.svg',
             category: 'transversal',
-            id: 6,
+            id: 7,
         },
         {
             name: 'Canva',
@@ -148,20 +148,28 @@ function Skills() {
     return <div className="skills-wrapper" id="skills">
         <div className="container">
             <Title tag={"h2"} className="text-center text-2xl text-sky-950 dark:text-sky-100 md:text-4xl" text="My Skills"></Title>
-            <p className="mx-auto mt-4 max-w-4xl text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">Here are the tools and technologies I rely on to bring projects to life. From frontend design to backend functionality, each skill plays a role in creating efficient solutions.</p>
-            <div className="mt-12 grid skills-grid gap-x-8 gap-y-4 items-center rounded-2xl">
-                <div className="col-span-2 grid grid-cols-subgrid">
-                <Title tag="h3" text="Categories" className="text-lg text-sky-950 dark:text-sky-100 md:text-2xl md:mb-4 invisible h-0 md:visible md:h-auto"></Title>
-                <Title tag="h3" text="Skills" className="text-lg text-sky-950 dark:text-sky-100 md:text-2xl md:mb-4 invisible h-0 md:visible md:h-auto"></Title>
+            <p className="mx-auto mt-4 text-pretty text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">Here are the tools and technologies I rely on to bring projects to life. From the UI design to the frontend, from the ER diagrams to the backend functionalities. Each skill plays a role in creating efficient solutions.</p>
+            <div className="mt-12 grid skills-grid gap-x-8 gap-y-0  rounded-2xl relative z-0 mx-auto">
+                <div className="md:col-span-2  grid grid-cols-subgrid rounded-t-[20px] md:px-4 md:py-6 items-center bg-sky-900 dark:bg-sky-200">
+                    <Title tag="h3" text="Categories" className="text-lg text-sky-100 dark:text-sky-950 md:text-2xl invisible h-0 md:visible md:h-auto"></Title>
+                    <Title tag="h3" text="Skills" className="text-lg text-sky-100 dark:text-sky-950 md:text-2xl invisible h-0 md:visible md:h-auto"></Title>
                 </div>
-                <Title tag="h4" text="Frontend development" className="text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
-                <ul className="flex gap-8 flex-wrap">{mapSkills(frontendSkills)}</ul>
-                <Title tag="h4" text="Backend development" className="text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
-                <ul className="flex gap-8 flex-wrap">{mapSkills(backendSkills)}</ul>
-                <Title tag="h4" text="Databases" className="text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
-                <ul className="flex gap-8 flex-wrap">{mapSkills(databaseSkills)}</ul>
-                <Title tag="h4" text="Transversal skills" className="text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
-                <ul className="flex gap-8 flex-wrap">{mapSkills(transversalSkills)}</ul>
+                <div className="md:col-span-2 gap-y-4 grid grid-cols-subgrid p-4 md:rounded-none rounded-t-[20px] items-center bg-sky-200 dark:bg-sky-900">
+                    <Title tag="h4" text="Frontend development" className="text-center md:text-left text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
+                    <ul className="flex gap-8 flex-wrap justify-center md:justify-normal">{mapSkills(frontendSkills)}</ul>
+                </div>
+                <div className="md:col-span-2 gap-y-4 grid grid-cols-subgrid p-4 items-center bg-sky-100 dark:bg-sky-950">
+                    <Title tag="h4" text="Backend development" className="text-base text-center text-sky-950 dark:text-sky-100 md:text-left md:text-lg md:m-0"></Title>
+                    <ul className="flex gap-8 flex-wrap justify-center md:justify-normal">{mapSkills(backendSkills)}</ul>
+                </div>
+                <div className="md:col-span-2 gap-y-4 grid grid-cols-subgrid p-4 items-center bg-sky-200 dark:bg-sky-900">
+                    <Title tag="h4" text="Databases" className="text-center md:text-left text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
+                    <ul className="flex gap-8 flex-wrap justify-center md:justify-normal">{mapSkills(databaseSkills)}</ul>
+                </div>
+                <div className="md:col-span-2 gap-y-4 grid grid-cols-subgrid p-4 items-center bg-sky-100 dark:bg-sky-950 rounded-b-[20px]">
+                    <Title tag="h4" text="Transversal skills" className="text-center md:text-left text-base text-sky-950 dark:text-sky-100 md:text-lg md:m-0"></Title>
+                    <ul className="flex gap-8 flex-wrap justify-center md:justify-normal">{mapSkills(transversalSkills)}</ul>
+                </div>
 
             </div>
         </div>
