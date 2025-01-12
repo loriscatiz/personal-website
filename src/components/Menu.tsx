@@ -2,7 +2,6 @@ import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'r
 
 import Button from './Button'
 import ThemeToggleButton from './ThemeToggleButton'
-import { text } from 'framer-motion/client'
 
 interface MenuProps {
     isMenuOpen: boolean

@@ -9,7 +9,7 @@ interface timelineProps{
     imgSrc: string;
 }
 
-function TimelineCard({position, time}: timelineProps){
+function TimelineCard({position}: timelineProps){
 
     return <div className="timeline-card">
         <Title tag={"h3"} text={position}></Title>
