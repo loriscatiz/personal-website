@@ -6,6 +6,7 @@ import ThemeManager from './ThemeManager'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Timeline from './components/Timeline'
+import Contact from './components/Contact'
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Projects />
                 <Skills />
                 <Timeline />
+                <Contact />
             </ThemeProvider>
         </>
     )

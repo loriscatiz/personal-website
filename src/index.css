@@ -47,6 +47,10 @@
     .hero-content {
         @apply container m-auto flex flex-col items-start gap-4 text-5xl font-black lg:gap-8 lg:text-7xl;
     }
+
+    .timeline-card-header{
+        grid-template-columns: 20% 1fr 20%;
+    }
 }
 
 @layer components {
