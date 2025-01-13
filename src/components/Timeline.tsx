@@ -42,8 +42,8 @@ function Timeline() {
             index: 3,
         },
         {
-            position: 'WordPress Web Developer Internship',
-            company: 'meravigliä - Reddoak',
+            position: 'Graphic Design Course',
+            company: 'Ifoa',
             time: 'April 2023 - September 2023',
             tag: 'education',
             description:
