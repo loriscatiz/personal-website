@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 interface ImageHoverProps {
-    imgsrc?: string // Default image URL
-    hoverimgsrc?: string // Hover image URL (optional)
-    alt?: string // Alt text for accessibility
-    className?: string // Optional extra classes
+    imgsrc?: string; // Default image URL
+    hoverimgsrc?: string; // Hover image URL (optional)
+    alt?: string; // Alt text for accessibility
+    className?: string; // Optional extra classes
 }
 
 const ImageHover: React.FC<ImageHoverProps> = ({
@@ -15,7 +15,7 @@ const ImageHover: React.FC<ImageHoverProps> = ({
 }) => {
     return (
         <div
-            className={`relative w-full overflow-clip shadow-lg rounded-t-[10px] ${className}`}
+            className={`relative w-full overflow-clip rounded-t-[10px] shadow-lg ${className}`}
         >
             <div
                 style={{
@@ -25,7 +25,7 @@ const ImageHover: React.FC<ImageHoverProps> = ({
             ></div>
             <img src={imgsrc} alt={alt} />
         </div>
-    )
-}
+    );
+};
 
-export default ImageHover
+export default ImageHover;

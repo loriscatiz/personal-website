@@ -1,12 +1,12 @@
-import Title from './Title'
+import Title from './Title';
 
 interface timelineProps {
-    position: string
-    company: string
-    time: string
-    tag: 'work' | 'study'
-    description: string
-    imgSrc: string
+    position: string;
+    company: string;
+    time: string;
+    tag: 'work' | 'study';
+    description: string;
+    imgSrc: string;
 }
 
 function TimelineCard({
@@ -38,6 +38,6 @@ function TimelineCard({
             <div className="timeline-card-body">{description}</div>
             <div className="timeline-card-footer">{tag}</div>
         </div>
-    )
+    );
 }
-export default TimelineCard
+export default TimelineCard;

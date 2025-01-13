@@ -1,5 +1,5 @@
-import TimelineCard from './TimelineCard'
-import Title from './Title'
+import TimelineCard from './TimelineCard';
+import Title from './Title';
 
 function Timeline() {
     return (
@@ -30,7 +30,7 @@ function Timeline() {
                 ></TimelineCard>
             </div>
         </div>
-    )
+    );
 }
 
-export default Timeline
+export default Timeline;

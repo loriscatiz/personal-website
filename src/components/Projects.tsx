@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import ProjectCard from './ProjectCard'
-import Title from './Title'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import ProjectCard from './ProjectCard';
+import Title from './Title';
 interface Project {
-    title: string
-    description: string
-    languages: string[]
-    categories: string[]
-    imgsrc: string
-    hoverImgSrc?: string
-    githubLink?: string
-    liveLink?: string
+    title: string;
+    description: string;
+    languages: string[];
+    categories: string[];
+    imgsrc: string;
+    hoverImgSrc?: string;
+    githubLink?: string;
+    liveLink?: string;
 }
 
 function Projects() {
@@ -57,7 +57,7 @@ function Projects() {
             hoverImgSrc: '/library-1.jpg',
             githubLink: 'https://github.com/loriscatiz/library',
         },
-    ]
+    ];
 
     const languageFilters = [
         'HTML',
@@ -66,16 +66,16 @@ function Projects() {
         'JavaScript',
         'React',
         'MySQL',
-    ]
-    const categoryFilters = ['Frontend', 'Backend', 'Database', 'General']
+    ];
+    const categoryFilters = ['Frontend', 'Backend', 'Database', 'General'];
 
-    const [filtered, setFiltered] = useState<Project[]>(projects)
+    const [filtered, setFiltered] = useState<Project[]>(projects);
     const [selectedLanguageFilters, setSelectedLanguageFilters] = useState<
         string[]
-    >([])
+    >([]);
     const [selectedCategoryFilters, setSelectedCategoryFilters] = useState<
         string[]
-    >([])
+    >([]);
 
     useEffect(() => {
         const filteredProjects = projects.filter((project) => {
@@ -83,17 +83,17 @@ function Projects() {
                 selectedLanguageFilters.length === 0 ||
                 project.languages.some((lang) =>
                     selectedLanguageFilters.includes(lang)
-                )
+                );
             const matchesCategories =
                 selectedCategoryFilters.length === 0 ||
                 project.categories.some((cat) =>
                     selectedCategoryFilters.includes(cat)
-                )
-            return matchesLanguages && matchesCategories
-        })
+                );
+            return matchesLanguages && matchesCategories;
+        });
 
-        setFiltered(filteredProjects)
-    }, [selectedLanguageFilters, selectedCategoryFilters])
+        setFiltered(filteredProjects);
+    }, [selectedLanguageFilters, selectedCategoryFilters]);
 
     const toggleFilter = (filter: string, type: 'languages' | 'categories') => {
         if (type === 'languages') {
@@ -101,15 +101,15 @@ function Projects() {
                 current.includes(filter)
                     ? current.filter((f) => f !== filter)
                     : [...current, filter]
-            )
+            );
         } else if (type === 'categories') {
             setSelectedCategoryFilters((current) =>
                 current.includes(filter)
                     ? current.filter((f) => f !== filter)
                     : [...current, filter]
-            )
+            );
         }
-    }
+    };
 
     return (
         <div className="bg-sky-200 py-16 dark:bg-sky-900" id="projects">
@@ -210,7 +210,7 @@ function Projects() {
                 )}
             </div>
         </div>
-    )
+    );
 }
 
-export default Projects
+export default Projects;

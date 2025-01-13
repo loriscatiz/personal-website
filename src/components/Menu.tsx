@@ -1,105 +1,121 @@
-import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'react'
+import {
+    Dispatch,
+    MutableRefObject,
+    SetStateAction,
+    useEffect,
+    useRef,
+} from 'react';
 
-import Button from './Button'
-import ThemeToggleButton from './ThemeToggleButton'
+import Button from './Button';
+import ThemeToggleButton from './ThemeToggleButton';
 
 interface MenuProps {
-    isMenuOpen: boolean
-    setMenuOpen: Dispatch<SetStateAction<boolean>>
-    lastScrollY: MutableRefObject<number>
-    setHeaderVisibility: React.Dispatch<React.SetStateAction<boolean>>
-
+    isMenuOpen: boolean;
+    setMenuOpen: Dispatch<SetStateAction<boolean>>;
+    lastScrollY: MutableRefObject<number>;
+    setHeaderVisibility: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: MenuProps) {
-
+function Menu({
+    isMenuOpen,
+    setMenuOpen,
+    lastScrollY,
+    setHeaderVisibility,
+}: MenuProps) {
     const menuItems = [
         {
-            href: "#hi",
-            text: "Hi"
+            href: '#hi',
+            text: 'Hi',
         },
         {
-            href: "#about",
-            text: "About me"
+            href: '#about',
+            text: 'About me',
         },
         {
-            href: "#projects",
-            text: "Projects"
+            href: '#projects',
+            text: 'Projects',
         },
         {
-            href: "#skills",
-            text: "Skills"
+            href: '#skills',
+            text: 'Skills',
         },
         {
-            href: "#timeline",
-            text: "Timeline"
+            href: '#timeline',
+            text: 'Timeline',
         },
         {
-            href: "#contact",
-            text: "Contact"
+            href: '#contact',
+            text: 'Contact',
         },
-    ]
+    ];
 
     const menuCta = {
         href: 'https://github.com/loriscatiz/',
         text: 'Github',
+    };
+
+    function handleIsOpen() {
+        setMenuOpen(!isMenuOpen); // Modifica diretta dello stato
+        lastScrollY.current = scrollY;
+        setHeaderVisibility(true);
     }
-    
-       
 
+    const menuRef = useRef<HTMLDivElement>(null);
+    const themeToggleRef = useRef<HTMLButtonElement>(null);
 
-            function handleIsOpen() {
-                setMenuOpen(!isMenuOpen) // Modifica diretta dello stato
-                lastScrollY.current = scrollY
-                setHeaderVisibility(true)
-            }
-
-    const menuRef = useRef<HTMLDivElement>(null)
-    const themeToggleRef = useRef<HTMLButtonElement>(null)
-
-    const mapMenuItems = function (menuItems: { href: string, text: string }[], mobile: boolean) {
+    const mapMenuItems = function (
+        menuItems: { href: string; text: string }[],
+        mobile: boolean
+    ) {
         if (mobile) {
             return menuItems.map((e, i) => {
-                return <li className="menu-item whitespace-nowrap" key={"mobile-" + i}> 
-                    <a
-                        href={e.href}
-                        tabIndex={isMenuOpen ? 0 : -1}
-                        onClick={handleIsOpen}
-                        aria-hidden={isMenuOpen ? false : true}
+                return (
+                    <li
+                        className="menu-item whitespace-nowrap"
+                        key={'mobile-' + i}
                     >
-                        {e.text}
-                    </a>
-                </li>
-            })
+                        <a
+                            href={e.href}
+                            tabIndex={isMenuOpen ? 0 : -1}
+                            onClick={handleIsOpen}
+                            aria-hidden={isMenuOpen ? false : true}
+                        >
+                            {e.text}
+                        </a>
+                    </li>
+                );
+            });
         }
         return menuItems.map((e, i) => {
-            return <li className="menu-item" key = {"desktop" + i}>
-                <a href={e.href}>{e.text}</a>
-            </li>
-        })
-    }
+            return (
+                <li className="menu-item" key={'desktop' + i}>
+                    <a href={e.href}>{e.text}</a>
+                </li>
+            );
+        });
+    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            const target = event.target as Node
+            const target = event.target as Node;
             if (
                 menuRef.current &&
                 !menuRef.current.contains(target) &&
                 themeToggleRef.current &&
                 !themeToggleRef.current.contains(target)
             ) {
-                setMenuOpen(false)
+                setMenuOpen(false);
             }
-        }
+        };
 
         if (isMenuOpen) {
-            document.addEventListener('mousedown', handleClickOutside)
+            document.addEventListener('mousedown', handleClickOutside);
         }
 
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [isMenuOpen])
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMenuOpen]);
     return (
         <>
             <div className="lg:hidden">
@@ -141,7 +157,7 @@ function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: Men
                 </div>
             </div>
             <menu className="menu-desktop hidden flex-grow flex-row items-center justify-end gap-6 lg:flex">
-               {mapMenuItems(menuItems, false)}
+                {mapMenuItems(menuItems, false)}
                 <ThemeToggleButton></ThemeToggleButton>
                 <Button
                     href={menuCta.href}
@@ -151,7 +167,7 @@ function Menu({ isMenuOpen, setMenuOpen, lastScrollY, setHeaderVisibility }: Men
                 ></Button>
             </menu>
         </>
-    )
+    );
 }
 
-export default Menu
+export default Menu;

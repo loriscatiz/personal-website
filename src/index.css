@@ -37,18 +37,18 @@
             ),
             url(/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
         background-size: cover;
-        box-shadow: 0 0 0 9999px #082f49 ;
+        box-shadow: 0 0 0 9999px #082f49;
     }
 
-    .menu-item{
-        @apply uppercase tracking-widest hover:scale-110 focus-within:scale-110 transition-transform
+    .menu-item {
+        @apply uppercase tracking-widest transition-transform focus-within:scale-110 hover:scale-110;
     }
 
     .hero-content {
         @apply container m-auto flex flex-col items-start gap-4 text-5xl font-black lg:gap-8 lg:text-7xl;
     }
 
-    .timeline-card-header{
+    .timeline-card-header {
         grid-template-columns: 20% 1fr 20%;
     }
 }
@@ -68,11 +68,10 @@
         --tw-rotate: -45deg;
     }
     @media screen and (min-width: 768px) {
-        .skills-grid{
+        .skills-grid {
             grid-template-columns: 20% 1fr;
         }
     }
-
 }
 
 /*Test*/

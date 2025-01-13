@@ -1,118 +1,112 @@
-import { useEffect, useState, useRef } from 'react'
-import Menu from './Menu'
-import { throttle } from '../utils'
-import ThemeToggleButton from './ThemeToggleButton'
+import { useEffect, useState, useRef } from 'react';
+import Menu from './Menu';
+import { throttle } from '../utils';
+import ThemeToggleButton from './ThemeToggleButton';
 
 function Header() {
-    const [visibility, setVisibility] = useState(true)
-    const [isMenuOpen, setMenuOpen] = useState(false)
-    const lastScrollY = useRef(0)
-    const isNavigating = useRef(false)
-    const [isTransparent, setTransparent] = useState(window.scrollY === 0)
-    const threshold = 30
-    const isResizing = useRef(false)
+    const [visibility, setVisibility] = useState(true);
+    const [isMenuOpen, setMenuOpen] = useState(false);
+    const lastScrollY = useRef(0);
+    const isNavigating = useRef(false);
+    const [isTransparent, setTransparent] = useState(window.scrollY === 0);
+    const threshold = 30;
+    const isResizing = useRef(false);
     const timeoutId = useRef<number | null>(null); // To manage setTimeout calls
     const loadThreshold = useRef(true);
 
-  // Handles window resize
-  const handleResizing = throttle(() => {
-    console.log("Resizing window");
-    isResizing.current = true;
-    if (window.innerWidth >= 1024) {
-        setMenuOpen(false); // Close the mobile menu on desktop
-    }
+    // Handles window resize
+    const handleResizing = throttle(() => {
+        console.log('Resizing window');
+        isResizing.current = true;
+        if (window.innerWidth >= 1024) {
+            setMenuOpen(false); // Close the mobile menu on desktop
+        }
 
-    // Clear any existing timeout to avoid overlapping
-    if (timeoutId.current) {
-      clearTimeout(timeoutId.current);
-    }
+        // Clear any existing timeout to avoid overlapping
+        if (timeoutId.current) {
+            clearTimeout(timeoutId.current);
+        }
 
-    // Set a new timeout to reset `isResizing`
-    timeoutId.current = window.setTimeout(() => {
-      isResizing.current = false;
-      console.log("Resize complete");
-    }, 1000);
-  }, 500)
+        // Set a new timeout to reset `isResizing`
+        timeoutId.current = window.setTimeout(() => {
+            isResizing.current = false;
+            console.log('Resize complete');
+        }, 1000);
+    }, 500);
 
-    window.addEventListener('resize', handleResizing)
-
+    window.addEventListener('resize', handleResizing);
 
     // Handle scroll visibility based on user action
     const handleScrollVisibility = throttle(() => {
-        if (isNavigating.current || isResizing.current || loadThreshold.current) return
-        
-        const scrollY = window.scrollY
-        
+        if (isNavigating.current || isResizing.current || loadThreshold.current)
+            return;
+
+        const scrollY = window.scrollY;
 
         if (Math.abs(scrollY - lastScrollY.current) > threshold) {
             if (scrollY > lastScrollY.current && !isMenuOpen) {
-                setVisibility(false) // Scrolling down
+                setVisibility(false); // Scrolling down
             } else {
-                setVisibility(true) // Scrolling up
+                setVisibility(true); // Scrolling up
             }
-            lastScrollY.current = scrollY
+            lastScrollY.current = scrollY;
         }
-    }, 100)
+    }, 100);
 
     const handleNavClick = () => {
-        isNavigating.current = true
-        setVisibility(true) // Ensure the header is visible during navigation
+        isNavigating.current = true;
+        setVisibility(true); // Ensure the header is visible during navigation
         setTimeout(() => {
-            isNavigating.current = false
-            lastScrollY.current = window.scrollY
-        }, 1000)
-    }
+            isNavigating.current = false;
+            lastScrollY.current = window.scrollY;
+        }, 1000);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
-            handleScrollVisibility()
+            handleScrollVisibility();
 
             // Update transparency
-            setTransparent(window.scrollY === 0)
+            setTransparent(window.scrollY === 0);
             if (window.scrollY === 0) {
-                setVisibility(true) // Ensure header is visible at the top
+                setVisibility(true); // Ensure header is visible at the top
             }
-        }
+        };
         setTimeout(() => {
             loadThreshold.current = false;
-            lastScrollY.current = window.scrollY
+            lastScrollY.current = window.scrollY;
         }, 1000);
-    
 
-        window.addEventListener('scroll', handleScroll)
-        window.addEventListener('resize', handleResizing)
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResizing);
 
         // Attach click handlers to navigation links
-        const navLinks = document.querySelectorAll('a[href^="#"]')
+        const navLinks = document.querySelectorAll('a[href^="#"]');
         navLinks.forEach((link) =>
             link.addEventListener('click', handleNavClick)
-        )
+        );
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-            window.removeEventListener('resize', handleResizing)
-            
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResizing);
+
             navLinks.forEach((link) =>
                 link.removeEventListener('click', handleNavClick)
-            )
-        }
-    }, [])
+            );
+        };
+    }, []);
     return (
         <header
-        className={`header fixed top-0 z-50 grid min-h-20 w-full items-center transition-all duration-500 ease-out
-        ${isMenuOpen ? 'bg-opacity-100 dark:bg-opacity-100' : ''} 
-        ${!visibility && !isMenuOpen ? '-translate-y-full' : ''}
-        ${
-            visibility && !isMenuOpen
-                ? 'bg-opacity-60 dark:bg-opacity-60'
-                : ''
-        }
-        ${
-            isTransparent && !isMenuOpen
-                ? 'bg-transparent text-sky-900 dark:text-sky-200'
-                : 'bg-sky-100 text-sky-900 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-200'
-        }`}
-    >
+            className={`header fixed top-0 z-50 grid min-h-20 w-full items-center transition-all duration-500 ease-out ${isMenuOpen ? 'bg-opacity-100 dark:bg-opacity-100' : ''} ${!visibility && !isMenuOpen ? '-translate-y-full' : ''} ${
+                visibility && !isMenuOpen
+                    ? 'bg-opacity-60 dark:bg-opacity-60'
+                    : ''
+            } ${
+                isTransparent && !isMenuOpen
+                    ? 'bg-transparent text-sky-900 dark:text-sky-200'
+                    : 'bg-sky-100 text-sky-900 backdrop-blur-sm dark:bg-sky-950 dark:text-sky-200'
+            }`}
+        >
             <div className="container m-auto flex items-center justify-between">
                 <svg
                     version="1.1"
@@ -158,11 +152,16 @@ function Header() {
                 </svg>
                 <div className="flex items-center gap-4">
                     <ThemeToggleButton className="lg:hidden"></ThemeToggleButton>
-                    <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} lastScrollY = {lastScrollY} setHeaderVisibility={setVisibility}/>
+                    <Menu
+                        isMenuOpen={isMenuOpen}
+                        setMenuOpen={setMenuOpen}
+                        lastScrollY={lastScrollY}
+                        setHeaderVisibility={setVisibility}
+                    />
                 </div>
             </div>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;

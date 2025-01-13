@@ -1,4 +1,4 @@
-import Title from './Title'
+import Title from './Title';
 
 function Skills() {
     const frontendSkills = [
@@ -38,7 +38,7 @@ function Skills() {
             category: 'frontend',
             id: 6,
         },
-    ]
+    ];
 
     const backendSkills = [
         {
@@ -59,7 +59,7 @@ function Skills() {
             category: 'backend',
             id: 3,
         },
-    ]
+    ];
 
     const databaseSkills = [
         {
@@ -68,7 +68,7 @@ function Skills() {
             category: 'database',
             id: 1,
         },
-    ]
+    ];
 
     const transversalSkills = [
         {
@@ -119,7 +119,7 @@ function Skills() {
             category: 'transversal',
             id: 8,
         },
-    ]
+    ];
 
     const mapSkills = (
         skills: { name: string; imgSrc: string; category: string; id: number }[]
@@ -140,9 +140,9 @@ function Skills() {
                         {e.name}
                     </span>
                 </li>
-            )
-        })
-    }
+            );
+        });
+    };
 
     return (
         <div className="skills-wrapper py-16" id="skills">
@@ -214,7 +214,7 @@ function Skills() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Skills
+export default Skills;

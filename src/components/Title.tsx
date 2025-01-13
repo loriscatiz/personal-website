@@ -1,22 +1,22 @@
-import React from 'react'
-import { ReactTyped } from 'react-typed'
+import React from 'react';
+import { ReactTyped } from 'react-typed';
 
 interface TitleProps {
-    tag: keyof JSX.IntrinsicElements // Limita i tag ai tipi validi in JSX
-    className?: string
-    text?: string
-    hasReactType?: boolean
-    loop?: boolean
-    preText?: string
-    preTextClassName?: string
-    firstBr?: boolean
-    postText?: string
-    postTextClassName?: string
-    secondBr?: boolean
-    reactTypedStrings?: string[]
-    typeSpeed?: number
-    backSpeed?: number
-    showCursor?: boolean
+    tag: keyof JSX.IntrinsicElements; // Limita i tag ai tipi validi in JSX
+    className?: string;
+    text?: string;
+    hasReactType?: boolean;
+    loop?: boolean;
+    preText?: string;
+    preTextClassName?: string;
+    firstBr?: boolean;
+    postText?: string;
+    postTextClassName?: string;
+    secondBr?: boolean;
+    reactTypedStrings?: string[];
+    typeSpeed?: number;
+    backSpeed?: number;
+    showCursor?: boolean;
 }
 
 function Title({
@@ -53,10 +53,10 @@ function Title({
                 {secondBr && <br />}
                 <span className={postTextClassName}>{postText}</span>
             </>
-        )
+        );
     }
 
-    return React.createElement(tag, { className }, text)
+    return React.createElement(tag, { className }, text);
 }
 
-export default Title
+export default Title;

@@ -1,4 +1,4 @@
-import Title from './Title'
+import Title from './Title';
 
 function Contact() {
     return (
@@ -9,7 +9,7 @@ function Contact() {
                 text="Contact me"
             ></Title>
         </div>
-    )
+    );
 }
 
-export default Contact
+export default Contact;

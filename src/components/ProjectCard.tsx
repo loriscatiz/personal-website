@@ -1,16 +1,16 @@
-import Button from './Button'
-import ImgHover from './ImgHover'
-import Title from './Title'
+import Button from './Button';
+import ImgHover from './ImgHover';
+import Title from './Title';
 
 interface ProjectCardProps {
-    title: string
-    description: string
-    languages: string[]
-    categories: string[]
-    imgsrc: string
-    hoverimgsrc?: string
-    githubLink?: string
-    liveLink?: string
+    title: string;
+    description: string;
+    languages: string[];
+    categories: string[];
+    imgsrc: string;
+    hoverimgsrc?: string;
+    githubLink?: string;
+    liveLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -26,20 +26,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <div className="project-card relative z-0 mx-auto max-w-3xl">
             <div className="rounded-[20px] bg-sky-100 p-[10px] dark:bg-sky-950">
-                <ImgHover
-                    imgsrc={imgsrc}
-                    hoverimgsrc={hoverimgsrc}
-                    alt=""
-                  
-                />
+                <ImgHover imgsrc={imgsrc} hoverimgsrc={hoverimgsrc} alt="" />
 
-                <div className="px-3 lg:px-6 py-4">
+                <div className="px-3 py-4 lg:px-6">
                     <Title
                         tag={'h3'}
                         className={'text-2xl text-sky-950 dark:text-sky-100'}
                         text={title}
                     ></Title>
-                    <p className="mt-2 mb-4 text-lg text-sky-900 dark:text-sky-200">
+                    <p className="mb-4 mt-2 text-lg text-sky-900 dark:text-sky-200">
                         {description}
                     </p>
                     <div className="grid-flow-col md:grid md:grid-cols-2 md:grid-rows-2">
@@ -97,7 +92,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ProjectCard
+export default ProjectCard;

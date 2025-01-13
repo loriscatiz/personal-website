@@ -1,19 +1,19 @@
-import { useRef } from 'react'
-import { useTheme } from '../ThemeContext'
+import { useRef } from 'react';
+import { useTheme } from '../ThemeContext';
 interface Props {
-    className?: string
+    className?: string;
 }
 
 export default function ThemeToggleButton({ className }: Props) {
-    const { theme, toggleTheme } = useTheme()
+    const { theme, toggleTheme } = useTheme();
 
-    const themeToggleRef = useRef<HTMLButtonElement>(null)
+    const themeToggleRef = useRef<HTMLButtonElement>(null);
     return (
         <>
             <button
                 ref={themeToggleRef}
                 onClick={toggleTheme}
-                className={`"themeToggleButton dark:border-inherit" grid aspect-square place-items-center rounded-full border-2 border-solid bg-transparent p-1 lg:hover:scale-110 lg:focus-within:scale-110 transition-transform  ${theme === 'dark' ? 'border-sky-200' : 'border-sky-900'} ${className}`}
+                className={`"themeToggleButton dark:border-inherit" grid aspect-square place-items-center rounded-full border-2 border-solid bg-transparent p-1 transition-transform lg:focus-within:scale-110 lg:hover:scale-110 ${theme === 'dark' ? 'border-sky-200' : 'border-sky-900'} ${className}`}
                 aria-label={
                     theme === 'dark'
                         ? 'change to light theme'
@@ -40,5 +40,5 @@ export default function ThemeToggleButton({ className }: Props) {
                 </svg>
             </button>
         </>
-    )
+    );
 }
