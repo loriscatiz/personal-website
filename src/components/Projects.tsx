@@ -137,7 +137,7 @@ function Projects() {
                     }
                     text="Categories"
                 ></Title>
-                <div className="mt-2 flex flex-wrap justify-center gap-2 text-sky-900 dark:text-sky-200">
+                <div className="mt-2 grid grid-cols-2 flex-wrap justify-center gap-2 text-sky-900 dark:text-sky-200 md:px-16 lg:flex">
                     {categoryFilters.map((filter) => (
                         <button
                             key={filter}
@@ -161,7 +161,7 @@ function Projects() {
                     }
                     text="Languages"
                 ></Title>
-                <div className="mt-2 flex flex-wrap justify-center gap-2">
+                <div className="mt-2 grid grid-cols-2 flex-wrap justify-center gap-2 text-sky-900 dark:text-sky-200 md:grid-cols-3 md:px-16 lg:flex">
                     {languageFilters.map((filter) => (
                         <button
                             key={filter}
