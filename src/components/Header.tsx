@@ -81,7 +81,7 @@ function Header() {
         window.addEventListener('resize', handleResizing);
 
         // Attach click handlers to navigation links
-        const navLinks = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll('.menu-item a');
         navLinks.forEach((link) =>
             link.addEventListener('click', handleNavClick)
         );
