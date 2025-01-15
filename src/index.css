@@ -92,10 +92,8 @@
         }
         .timeline-card-header::after {
             content: '';
-            @apply absolute bottom-8 z-20 h-1 w-4 bg-sky-900 dark:bg-sky-200;
+            @apply absolute top-1/2 z-20 h-1 w-4 -translate-y-1/2 bg-sky-900 dark:bg-sky-200;
         }
-    
-        
     }
 
     @media screen and (min-width: 768px) {

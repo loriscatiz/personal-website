@@ -134,7 +134,7 @@ function Skills() {
                     <img
                         src={e.imgSrc}
                         alt={e.name}
-                        className="w-[48px] transition-transform group-hover:scale-110"
+                        className="w-[48px] transition-transform duration-300 group-hover:scale-110"
                     />
                     <span className="invisible absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:visible">
                         {e.name}

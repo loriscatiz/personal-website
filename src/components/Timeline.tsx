@@ -27,7 +27,7 @@ function Timeline() {
             time: 'July 2024 - August 2024',
             tag: 'work',
             description:
-                "In this role, I provided technical support to healthcare professionals, helping them navigate and resolve issues with their CRM software. While not directly related to coding, this experience allowed me to develop strong teamwork and interpersonal communication skills. Though brief, it remains a valuable part of my professional journey, showcasing my adaptability and ability to collaborate in high-pressure environments.",
+                'In this role, I provided technical support to healthcare professionals, helping them navigate and resolve issues with their CRM software. While not directly related to coding, this experience allowed me to develop strong teamwork and interpersonal communication skills. Though brief, it remains a valuable part of my professional journey, showcasing my adaptability and ability to collaborate in high-pressure environments.',
             imgSrc: '/logo-GPI-2019.jpg',
             index: 2,
         },
@@ -37,7 +37,7 @@ function Timeline() {
             time: 'November 2023 - May 2024',
             tag: 'work',
             description:
-                "During this internship, I built websites using Elementor, created designs in Figma, and occasionally wrote custom code (CSS and JavaScript) to overcome CMS limitations. This experience taught me how to approach problem-solving in real-world scenarios, work efficiently under tight deadlines, and collaborate effectively in a team. It was my first real work experience and a key step in solidifying my passion for web development.",
+                'During this internship, I built websites using Elementor, created designs in Figma, and occasionally wrote custom code (CSS and JavaScript) to overcome CMS limitations. This experience taught me how to approach problem-solving in real-world scenarios, work efficiently under tight deadlines, and collaborate effectively in a team. It was my first real work experience and a key step in solidifying my passion for web development.',
             imgSrc: '/logo_reddoak_foglia.png',
             index: 3,
         },
@@ -47,12 +47,10 @@ function Timeline() {
             time: 'April 2023 - September 2023',
             tag: 'education',
             description:
-                "This course was my introduction to the world of web development, sparking a passion for creating functional and visually appealing websites. Although the primary focus was graphic design, it laid the foundation for my future career in tech and connected me to my first internship as a WordPress developer.",
+                'This course was my introduction to the world of web development, sparking a passion for creating functional and visually appealing websites. Although the primary focus was graphic design, it laid the foundation for my future career in tech and connected me to my first internship as a WordPress developer.',
             imgSrc: '/IFOA_Logo.png',
             index: 4,
         },
-      
-      
     ];
 
     const maptimelineEvents = (
