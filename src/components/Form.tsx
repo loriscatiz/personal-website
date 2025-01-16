@@ -2,10 +2,11 @@ import Button from './Button';
 
 function Form() {
     return (
-        <form
+        <form name='contact'
             method="POST"
             className="form flex flex-col rounded-2xl bg-sky-200 p-8 shadow-lg dark:bg-sky-900"
         >
+             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col gap-2">
                 <label
                     htmlFor="name"
