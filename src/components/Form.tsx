@@ -43,7 +43,7 @@ function Form() {
                     name="message"
                     rows={4}
                     id="message"
-                    className="rounded-xl bg-sky-800 px-4 py-2 text-sky-100 ring-indigo-600 focus:outline-none focus:ring dark:bg-sky-200 dark:text-sky-950"
+                    className="resize-none rounded-xl bg-sky-800 px-4 py-2 text-sky-100 ring-indigo-600 focus:outline-none focus:ring dark:bg-sky-200 dark:text-sky-950"
                 />
 
                 <Button
