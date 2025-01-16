@@ -38,10 +38,15 @@ function Contact() {
                         text="Contact me"
                     ></Title>
                     <p className="mt-6 text-xl text-sky-900 dark:text-sky-200">
-                        Got a question or want to collaborate? Feel free to
-                        reach out! You can submit the form or contact me
-                        directly via email or LinkedIn. I look forward to
-                        hearing from you!
+                        Sure! Here's a longer version of your text: "Have a
+                        question, an idea to discuss, or an exciting opportunity
+                        to collaborate? I'd love to hear from you! Feel free to
+                        use the form to get in touch, or if you prefer, reach
+                        out to me directly via email or LinkedIn. Whether it's a
+                        quick question, a partnership proposal, or just a
+                        friendly hello, I'm always excited to connect. I look
+                        forward to hearing from you and exploring how we can
+                        work together!"
                     </p>
                     <div className="mt-8 flex gap-8">
                         {SocialIcons.map((e) => {

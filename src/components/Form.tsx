@@ -21,7 +21,7 @@ function Form() {
                     className="rounded-xl bg-sky-800 px-4 py-2 text-sky-100 ring-indigo-600 focus:outline-none focus:ring dark:bg-sky-200 dark:text-sky-950"
                 />
                 <label
-                    htmlFor="name"
+                    htmlFor="email"
                     className="uppercase tracking-widest text-sky-950 dark:text-sky-100"
                 >
                     Email:
@@ -50,7 +50,7 @@ function Form() {
                     text={'Submit'}
                     variant={'primary'}
                     type={'submit'}
-                    className="mt-4 cursor-pointer self-center"
+                    className="mt-4 cursor-pointer"
                 ></Button>
             </div>
         </form>
