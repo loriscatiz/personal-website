@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../contexts/theme-context/ThemeContext';
 interface Props {
     className?: string;
 }

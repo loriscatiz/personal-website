@@ -76,6 +76,13 @@
         transform: translateX(-50%);
         z-index: 0;
     }
+    .modal{
+        box-shadow: 0 0 0 300vw rgba(255, 0, 0, 0.452);
+        
+    }
+    .modal::backdrop {
+        backdrop-filter: blur(4px);
+      }
 
     @media screen and (min-width: 1024px) {
         .timeline-cards-wrapper {

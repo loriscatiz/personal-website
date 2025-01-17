@@ -1,4 +1,4 @@
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../contexts/theme-context/ThemeContext';
 
 interface SocialIconProps {
     social: string;
