@@ -19,7 +19,7 @@ function SocialIcon({
 
     return (
         <a
-            className="flex flex-col items-center text-sky-900 transition-transform duration-300 hover:scale-110 dark:text-sky-200"
+            className="flex gap-4 items-center text-sky-900 transition-transform duration-300 hover:scale-110 dark:text-sky-200"
             target="_blank"
             href={href}
             rel="noopener noreferrer"

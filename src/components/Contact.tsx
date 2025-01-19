@@ -19,7 +19,7 @@ function Contact() {
             index: 2,
         },
         {
-            social: 'email',
+            social: 'loriscatiz@gmail.com',
             href: 'mailto:loriscatiz@gmail.com',
             icon: '/email.svg',
             darkIcon: '/email.svg',
@@ -47,7 +47,7 @@ function Contact() {
                         I look forward to hearing from you and exploring how we
                         can work together!
                     </p>
-                    <div className="mt-8 flex gap-8">
+                    <div className="mt-8 flex flex-col flex-wrap sm:flex-row gap-8">
                         {SocialIcons.map((e) => {
                             return (
                                 <SocialIcon
