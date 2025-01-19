@@ -44,6 +44,16 @@ select:-webkit-autofill:focus {
         box-shadow: 0 0 0 9999px #e0f2fe;
     }
 
+    .modal::backdrop {
+        backdrop-filter: blur(4px); /* Cates the blur effect */
+        background-color: rgba(8, 47, 73, .75); /* Adds a dark overlay */
+    }   
+
+    .dark .modal::backdrop {
+        backdrop-filter: blur(4px);
+        background-color: rgba(186, 229, 253, .65); /* Dark mode overlay */
+    }
+
     .dark .hero-wrapper {
         background: linear-gradient(
                 0deg,
@@ -91,13 +101,6 @@ select:-webkit-autofill:focus {
         transform: translateX(-50%);
         z-index: 0;
     }
-    .modal{
-        box-shadow: 0 0 0 300vw rgba(255, 0, 0, 0.452);
-        
-    }
-    .modal::backdrop {
-        backdrop-filter: blur(4px);
-      }
 
     @media screen and (min-width: 1024px) {
         .timeline-cards-wrapper {
