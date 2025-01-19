@@ -47,7 +47,7 @@ function Contact() {
                         I look forward to hearing from you and exploring how we
                         can work together!
                     </p>
-                    <div className="mt-8 flex flex-col flex-wrap sm:flex-row gap-8">
+                    <div className="mt-8 flex flex-col flex-wrap gap-8 sm:flex-row">
                         {SocialIcons.map((e) => {
                             return (
                                 <SocialIcon

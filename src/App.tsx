@@ -17,15 +17,15 @@ function App() {
             <ThemeProvider>
                 <ThemeManager />
                 <ModalProvider>
-                <Header />
-                <Hero />
-                <About />
-                <Projects />
-                <Skills />
-                <Timeline />
-                <Contact />
-                <Footer />
-                <PrivacyPolicyModal />
+                    <Header />
+                    <Hero />
+                    <About />
+                    <Projects />
+                    <Skills />
+                    <Timeline />
+                    <Contact />
+                    <Footer />
+                    <PrivacyPolicyModal />
                 </ModalProvider>
             </ThemeProvider>
         </>

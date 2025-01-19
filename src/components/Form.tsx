@@ -1,17 +1,16 @@
 import Button from './Button';
-import { useModal } from '../contexts/ModalContext'
+import { useModal } from '../contexts/ModalContext';
 
 function Form() {
-
     const { openModal } = useModal();
 
-    
     return (
-        <form name='contact'
+        <form
+            name="contact"
             method="POST"
             className="form flex flex-col rounded-2xl bg-sky-200 p-8 shadow-lg dark:bg-sky-900"
         >
-             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col gap-2">
                 <label
                     htmlFor="name"
@@ -51,20 +50,29 @@ function Form() {
                     id="message"
                     className="resize-none rounded-xl bg-sky-800 px-4 py-2 text-sky-100 ring-indigo-600 focus:outline-none focus:ring dark:bg-sky-200 dark:text-sky-950"
                 />
-                <div className='text-sky-950 dark:text-sky-100'>
-                <input type="checkbox"  required name="privacy" id="privacy" className='w-4 h-4 ' />
-                <label htmlFor="privacy">
-                &nbsp;By submitting this form, I confirm that I have read and agree to the&nbsp;
-                <a href='#'
-                      onClick={(e) => {
-                        e.preventDefault(); // Prevent the default anchor behavior
-                        e.stopPropagation(); // Prevent the click from toggling the checkbox
-                        openModal(); // Your function to open the modal
-                    }}
-                    className="underline hover:text-sky-400 focus:text-sky-400"
-                >
-                    Privacy Policy </a>
-                </label>
+                <div className="text-sky-950 dark:text-sky-100">
+                    <input
+                        type="checkbox"
+                        required
+                        name="privacy"
+                        id="privacy"
+                        className="h-4 w-4"
+                    />
+                    <label htmlFor="privacy">
+                        &nbsp;By submitting this form, I confirm that I have
+                        read and agree to the&nbsp;
+                        <a
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault(); // Prevent the default anchor behavior
+                                e.stopPropagation(); // Prevent the click from toggling the checkbox
+                                openModal(); // Your function to open the modal
+                            }}
+                            className="underline hover:text-sky-400 focus:text-sky-400"
+                        >
+                            Privacy Policy{' '}
+                        </a>
+                    </label>
                 </div>
                 <Button
                     text={'Submit'}

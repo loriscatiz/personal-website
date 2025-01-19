@@ -8,21 +8,21 @@
         scroll-behavior: smooth;
     }
 
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: 1px solid #c7d2fe;
-  -webkit-text-fill-color: #c7d2fe;
-  -webkit-box-shadow: 0 0 0px 500px #4338ca inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
+    /* Change Autocomplete styles in Chrome*/
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        border: 1px solid #c7d2fe;
+        -webkit-text-fill-color: #c7d2fe;
+        -webkit-box-shadow: 0 0 0px 500px #4338ca inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
 }
 @layer utilities {
     .container {
@@ -44,14 +44,19 @@ select:-webkit-autofill:focus {
         box-shadow: 0 0 0 9999px #e0f2fe;
     }
 
+    .close.button {
+        padding: 0.125rem;
+        height: 2rem;
+        width: 2rem;
+    }
     .modal::backdrop {
         backdrop-filter: blur(4px); /* Cates the blur effect */
-        background-color: rgba(8, 47, 73, .75); /* Adds a dark overlay */
-    }   
+        background-color: rgba(8, 47, 73, 0.75); /* Adds a dark overlay */
+    }
 
     .dark .modal::backdrop {
         backdrop-filter: blur(4px);
-        background-color: rgba(186, 229, 253, .65); /* Dark mode overlay */
+        background-color: rgba(186, 229, 253, 0.65); /* Dark mode overlay */
     }
 
     .dark .hero-wrapper {
