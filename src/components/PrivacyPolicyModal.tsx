@@ -88,8 +88,8 @@ function PrivacyPolicyModal() {
                 ></Title>
                 <p className="mt-2">
                     The only personal data collected through this website is
-                    submitted voluntarily by users via the contact form. This
-                    includes:
+                    voluntarily provided by users through the contact form. This
+                    data includes:
                 </p>
                 <ul className="mt-2 list-inside list-disc">
                     <li>Name (used to address you)</li>
@@ -100,8 +100,14 @@ function PrivacyPolicyModal() {
                     </li>
                 </ul>
                 <p className="mt-2">
-                    No additional data is collected, and this website does not
-                    use cookies or other tracking technologies.
+                    In addition, technical information such as IP address and
+                    browser user agent may be logged automatically by Netlify,
+                    the hosting provider, to prevent spam and ensure security.
+                    This information is not used for any other purpose.
+                    <p className="mt-2">
+                        This website does not use cookies or other tracking
+                        technologies for analytics or advertising.
+                    </p>
                 </p>
                 <Title
                     tag={'h3'}
