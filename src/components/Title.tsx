@@ -41,7 +41,9 @@ function Title({
             tag,
             { className },
             <>
-                <span className={preTextClassName}>{preText}</span>
+                <span className={`${preTextClassName} notranslate`}>
+                    {preText}
+                </span>
                 {firstBr && <br />}
                 <ReactTyped
                     strings={reactTypedStrings}
