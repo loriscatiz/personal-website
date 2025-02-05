@@ -48,6 +48,17 @@ function Projects() {
             githubLink: 'https://github.com/loriscatiz/python-mini-projects',
         },
         {
+            title: 'Landing page template',
+            description:
+                'A simple landing page template, built using HTML, CSS and JavaScript.',
+            languages: ['HTML', 'CSS', 'JavaScript'],
+            categories: ['Frontend'],
+            imgsrc: '/landing-0.jpg',
+            hoverImgSrc: '/landing-1.jpg',
+            githubLink: 'https://github.com/loriscatiz/landing-page-template',
+            liveLink: 'https://loriscatiz-landing-page-template.netlify.app/',
+        },
+        {
             title: 'Library database',
             description:
                 'A normalized and scalable database schema for a library management system, designed to demonstrate database design and SQL skills. The schema includes tables for managing members, books, authors, reservations, borrowings, fines, and staff, ensuring data integrity and optimal query performance.',
