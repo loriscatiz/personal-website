@@ -53,12 +53,6 @@ function Skills() {
             category: 'backend',
             id: 2,
         },
-        {
-            name: 'php',
-            imgSrc: '/php.svg',
-            category: 'backend',
-            id: 3,
-        },
     ];
 
     const databaseSkills = [
@@ -96,7 +90,7 @@ function Skills() {
             id: 4,
         },
         {
-            name: 'WordPress',
+            name: 'WordPresss',
             imgSrc: '/wordpress.svg',
             category: 'transversal',
             id: 5,
@@ -136,7 +130,7 @@ function Skills() {
                         alt={e.name}
                         className="w-[48px] transition-transform duration-300 group-hover:scale-110"
                     />
-                    <span className="invisible absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:visible">
+                    <span className="invisible absolute top-100 left-1/2 -translate-x-1/2 group-hover:visible">
                         {e.name}
                     </span>
                 </li>
