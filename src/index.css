@@ -6,6 +6,7 @@
     :root {
         scroll-padding: 5rem;
         scroll-behavior: smooth;
+        font-family: 'Montserrat', sans-serif;
     }
 
     /* Change Autocomplete styles in Chrome*/

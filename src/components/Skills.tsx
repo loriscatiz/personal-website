@@ -72,8 +72,8 @@ function Skills() {
             id: 1,
         },
         {
-            name: 'draw.io',
-            imgSrc: '/draw-io.svg',
+            name: 'Linux',
+            imgSrc: '/linux.svg',
             category: 'transversal',
             id: 2,
         },
@@ -107,12 +107,6 @@ function Skills() {
             category: 'transversal',
             id: 7,
         },
-        {
-            name: 'Canva',
-            imgSrc: '/canva.svg',
-            category: 'transversal',
-            id: 8,
-        },
     ];
 
     const mapSkills = (
@@ -128,9 +122,9 @@ function Skills() {
                     <img
                         src={e.imgSrc}
                         alt={e.name}
-                        className="w-[48px] transition-transform duration-300 group-hover:scale-110"
+                        className="h-full w-[48px] transition-transform duration-300 group-hover:scale-110"
                     />
-                    <span className="invisible absolute top-100 left-1/2 -translate-x-1/2 group-hover:visible">
+                    <span className="top-100 invisible absolute left-1/2 -translate-x-1/2 group-hover:visible">
                         {e.name}
                     </span>
                 </li>
