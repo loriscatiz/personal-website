@@ -7,7 +7,7 @@ function About() {
             <div className="bg-sky-100 pb-16 pt-24 dark:bg-sky-950">
                 <div className="container grid lg:grid-cols-2 lg:gap-8">
                     <img
-                        src="https://placehold.co/600x600"
+                        src="/loris.jpg"
                         alt="Loris Catizzone"
                         className="-mt-32 w-full scroll-m-12 rounded-xl shadow-lg"
                         id="about"
