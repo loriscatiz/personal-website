@@ -16,6 +16,16 @@ interface Project {
 function Projects() {
     const projects: Project[] = [
         {
+            title: 'Java authentication with JWT',
+            description:
+                'A secure authentication and authorization system built with Javalin, demonstrating JWT-based session management and proper security practices. Features password hashing with secure algorithms, token-based authentication with Redis for session storage, and MySQL for user data persistence. Implements clean separation of concerns between JWT validation and authentication business logic. ',
+            languages: ['Java', 'MySQL'],
+            categories: ['Backend', 'Database'],
+            imgsrc: '/java-jwt-0.jpg',
+            hoverImgSrc: '/java-jwt-1.jpg',
+            githubLink: 'https://github.com/loriscatiz/java-jwt',
+        },
+        {
             title: 'Personal website',
             description:
                 'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
@@ -72,6 +82,7 @@ function Projects() {
     ];
 
     const languageFilters = [
+        'Java',
         'HTML',
         'CSS',
         'Python',
