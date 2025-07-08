@@ -9,8 +9,16 @@ function Timeline() {
         tag: 'work' | 'education'; // Ensure this matches
         description: string;
         imgSrc: string;
-        index: number;
     }[] = [
+        {
+            position: 'Django Developer Internship',
+            company: 'Coderit',
+            time: 'July 2025 - Present',
+            tag: 'work',
+            description:
+                "During this internship, I’m collaborating with a team of developers to build a CRM platform tailored for condominium administrators. The project gives me the opportunity to apply the skills I’ve acquired in my IFTS software development course to a real-world context. I’m gaining hands-on experience with team-based development, backend logic, and practical problem-solving in a production-oriented environment.",
+            imgSrc: '/coderit_logo.jpg',
+        },  
         {
             position: 'IFTS Software developer',
             company: 'Ifoa',
@@ -19,7 +27,6 @@ function Timeline() {
             description:
                 "I'm currently deepening my understanding of software development, focusing on databases (MySQL), backend development (Java and Python), and frontend technologies (HTML, CSS, and JavaScript). While I already had experience with frontend development, this course emphasizes not just learning syntax but also structuring and designing software thoughtfully. It's teaching me to think like a developer and focus on creating solutions that are both effective and maintainable.",
             imgSrc: '/IFOA_Logo.png',
-            index: 1,
         },
         {
             position: 'Helpdesk',
@@ -29,7 +36,6 @@ function Timeline() {
             description:
                 'In this role, I provided technical support to healthcare professionals, helping them navigate and resolve issues with their CRM software. While not directly related to coding, this experience allowed me to develop strong teamwork and interpersonal communication skills. Though brief, it remains a valuable part of my professional journey, showcasing my adaptability and ability to collaborate in high-pressure environments.',
             imgSrc: '/logo-GPI-2019.jpg',
-            index: 2,
         },
         {
             position: 'WordPress Web Developer Internship',
@@ -39,7 +45,6 @@ function Timeline() {
             description:
                 'During this internship, I built websites using Elementor, created designs in Figma, and occasionally wrote custom code (CSS and JavaScript) to overcome CMS limitations. This experience taught me how to approach problem-solving in real-world scenarios, work efficiently under tight deadlines, and collaborate effectively in a team. It was my first real work experience and a key step in solidifying my passion for web development.',
             imgSrc: '/logo_reddoak_foglia.png',
-            index: 3,
         },
         {
             position: 'Graphic Design Course',
@@ -49,7 +54,6 @@ function Timeline() {
             description:
                 'This course was my introduction to the world of web development, sparking a passion for creating functional and visually appealing websites. Although the primary focus was graphic design, it laid the foundation for my future career in tech and connected me to my first internship as a WordPress developer.',
             imgSrc: '/IFOA_Logo.png',
-            index: 4,
         },
     ];
 
@@ -61,10 +65,9 @@ function Timeline() {
             tag: 'work' | 'education';
             description: string;
             imgSrc: string;
-            index: number;
         }[]
     ) => {
-        return timelineEvents.map((e) => {
+        return timelineEvents.map((e, i) => {
             return (
                 <TimelineCard
                     position={e.position}
@@ -73,8 +76,8 @@ function Timeline() {
                     tag={e.tag}
                     description={e.description}
                     imgSrc={e.imgSrc}
-                    index={e.index}
-                    key={e.index}
+                    index={i}
+                    key={i}
                 />
             );
         });
@@ -95,7 +98,7 @@ function Timeline() {
                     define my growth as a developer. Each card tells a story of
                     learning, building, and evolving along the way.
                 </p>
-                <div className="timeline-cards-wrapper relative mt-8 grid gap-6 lg:grid-cols-2">
+                <div className={`timeline-cards-wrapper relative mt-8 grid gap-6 lg:grid-cols-2 lg:grid-rows-[repeat(auto-fill,_minmax(6rem,_auto))] `}>
                     {maptimelineEvents(timelineEvents)}
                 </div>
             </div>
