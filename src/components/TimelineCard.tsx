@@ -4,7 +4,7 @@ interface timelineProps {
     position: string;
     company: string;
     time: string;
-    tag: 'work' | 'education';
+    tag: 'lavoro' | 'formazione';
     description: string;
     imgSrc: string;
     index: number;

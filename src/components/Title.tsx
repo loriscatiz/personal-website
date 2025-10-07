@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactTyped } from 'react-typed';
 
 interface TitleProps {
-    tag: keyof JSX.IntrinsicElements; // Limita i tag ai tipi validi in JSX
+    tag: keyof React.JSX.IntrinsicElements; // Limita i tag ai tipi validi in JSX
     className?: string;
     text?: string;
     hasReactType?: boolean;
