@@ -52,7 +52,7 @@ function PrivacyPolicyModal() {
                     text={'x'}
                     variant={''}
                 ></Button>
-                <p className="mt-2 text-lg"> Last updated: 19/01/2025</p>
+                <p className="mt-2 text-lg">Ultimo aggiornamento: 07/10/2025</p>
                 <p className="mt-2">
                     La tua privacy è molto importante per me e mi impegno a proteggere i tuoi dati personali.
                     Questa informativa spiega quali dati vengono raccolti, come vengono utilizzati e quali sono i tuoi diritti ai sensi del Regolamento Generale sulla Protezione dei Dati (GDPR).

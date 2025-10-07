@@ -202,7 +202,7 @@ function Skills() {
                     <div className="grid grid-cols-subgrid items-center gap-y-4 rounded-b-[20px] bg-sky-100 p-4 dark:bg-sky-950 md:col-span-2">
                         <Title
                             tag="h4"
-                            text="Transversal skills"
+                            text="Skill trasversali"
                             className="text-center text-base text-sky-950 dark:text-sky-100 md:m-0 md:text-left md:text-lg"
                         ></Title>
                         <ul className="flex flex-wrap justify-center gap-8 md:justify-normal">
