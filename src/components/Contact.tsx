@@ -35,17 +35,14 @@ function Contact() {
                     <Title
                         tag={'h2'}
                         className="gap-x-8 text-2xl text-sky-950 dark:text-sky-100 md:text-4xl"
-                        text="Contact me"
+                        text="Contattami"
                     ></Title>
                     <p className="mt-6 text-xl text-sky-900 dark:text-sky-200">
-                        Have a question, an idea to discuss, or an exciting
-                        opportunity to collaborate? I'd love to hear from you!
-                        Feel free to use the form to get in touch, or if you
-                        prefer, reach out to me directly via email or LinkedIn.
-                        Whether it's a quick question, a partnership proposal,
-                        or just a friendly hello, I'm always excited to connect.
-                        I look forward to hearing from you and exploring how we
-                        can work together!
+                        Se vuoi parlarmi di un progetto, proporre una collaborazione o semplicemente scambiare due parole, scrivimi pure.
+                        Puoi utilizzare il modulo qui sotto oppure contattarmi direttamente via email o LinkedIn.
+                    </p>
+                    <p className="mt-6 text-xl text-sky-900 dark:text-sky-200">
+                        Sono sempre aperto a nuove opportunità di collaborazione nel campo dello sviluppo web.
                     </p>
                     <div className="mt-8 flex flex-col flex-wrap gap-8 sm:flex-row">
                         {SocialIcons.map((e) => {

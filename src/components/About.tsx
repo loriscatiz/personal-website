@@ -14,42 +14,29 @@ function About() {
                     />
                     <div className="mt-6 flex flex-col items-start lg:mt-0">
                         <Title
-                            text="About me"
+                            text="Cosa faccio"
                             tag={'h2'}
                             className={
                                 'text-xl text-sky-950 dark:text-sky-100 lg:col-start-2'
                             }
                         ></Title>
                         <Title
-                            text="I'm a passionate developer"
+                            text="Dalla logica al layout: sviluppo web a 360°"
                             tag={'h3'}
                             className={
-                                'text-4xl text-sky-950 dark:text-sky-100 lg:col-start-2'
+                                'text-2xl text-sky-950 dark:text-sky-100 lg:col-start-2'
                             }
                         ></Title>
                         <p className="mt-4 text-sky-900 dark:text-sky-200 lg:col-start-2 lg:text-left">
-                            {' '}
-                            Hi, I'm Loris Catizzone, a passionate developer with
-                            a growing love for building intuitive and efficient
-                            solutions. My journey in tech began with a curiosity
-                            to understand how things work behind the scenes,
-                            which has since transformed into a commitment to
-                            creating meaningful digital experiences.
+                            Mi chiamo Loris Catizzone e sviluppo soluzioni web complete, dal front-end al back-end.
+                            Mi piace creare interfacce chiare e funzionali, ma anche curare la logica che le sostiene.
+                            Negli ultimi anni ho lavorato su progetti che spaziano dal design di landing page allo sviluppo di applicazioni con Python, Django e JavaScript.
                         </p>
                         <p className="mt-2 text-sky-900 dark:text-sky-200 lg:col-start-2 lg:text-left">
-                            I thrive on solving problems, whether it's designing
-                            sleek frontends, optimizing backends, or managing
-                            databases. When I'm not coding, I enjoy exploring
-                            new tools and learning ways to improve my skills.
-                        </p>
-                        <p className="mt-2 text-sky-900 dark:text-sky-200 lg:col-start-2 lg:text-left">
-                            This portfolio showcases some of my work, from
-                            creative web designs to technical problem-solving.
-                            I'm always eager to tackle new challenges and
-                            collaborate on projects that make a difference.
+                            Oggi collaboro come freelance con aziende e professionisti, aiutandoli a trasformare idee in prodotti digitali concreti e ben strutturati.
                         </p>
                         <Button
-                            text="Contact me"
+                            text="Contattami"
                             variant={'primary'}
                             href={'#contact'}
                             className="mt-4 lg:col-start-2"

@@ -46,7 +46,9 @@
     }
 
     .close.button {
-        padding: 0.125rem;
+        display: grid;
+        place-content: center;
+        padding: 0.25rem !important;
         height: 2rem;
         width: 2rem;
     }
@@ -81,6 +83,11 @@
 
     .timeline-card-header {
         grid-template-columns: 3rem 1fr;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        opacity: 55%;
     }
 }
 

@@ -29,7 +29,7 @@ function PrivacyPolicyModal() {
     return (
         <dialog
             ref={dialogRef}
-            className="modal w-[90%] max-w-3xl rounded-xl bg-sky-200 px-6 py-8 text-sky-950 dark:bg-sky-900 dark:text-sky-100"
+            className="modal w-[90%] max-w-3xl rounded-xl bg-sky-200 px-6 py-8 text-sky-950 dark:bg-sky-900 dark:text-sky-100 mx-auto"
             onClick={(e) => {
                 if (e.target === dialogRef.current) {
                     closeModal(); // Close when clicking on the backdrop
@@ -40,7 +40,7 @@ function PrivacyPolicyModal() {
                 <Title
                     tag={'h2'}
                     className="text-2xl"
-                    text="Privacy Policy"
+                    text="Informativa sulla privacy"
                 ></Title>
                 <Button
                     aria-label="close"
@@ -54,166 +54,140 @@ function PrivacyPolicyModal() {
                 ></Button>
                 <p className="mt-2 text-lg"> Last updated: 19/01/2025</p>
                 <p className="mt-2">
-                    Welcome to my website! Your privacy is very important to me,
-                    and I am committed to protecting your personal data. This
-                    privacy policy explains what information is collected, how
-                    it is used, and your rights under the General Data
-                    Protection Regulation (GDPR).
+                    La tua privacy è molto importante per me e mi impegno a proteggere i tuoi dati personali.
+                    Questa informativa spiega quali dati vengono raccolti, come vengono utilizzati e quali sono i tuoi diritti ai sensi del Regolamento Generale sulla Protezione dei Dati (GDPR).
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="Who is Responsible for Your Data?"
+                    text="Titolare del trattamento"
                 ></Title>
                 <p className="mt-2">
-                    The owner of this website is:
-                    <br /> Loris Catizzone <br /> Based in Italy
-                </p>
-                <p className="mt-2">
-                    If you have any questions or concerns about this privacy
-                    policy or how your data is handled, you can contact me via
-                    email at:
-                    <br />
-                    <a
+                    Il titolare del trattamento dei dati è:<br />
+                    Loris Catizzone<br />
+                    Con sede in Italia<br />
+                    Email: <a
                         href="mailto:loriscatiz@gmail.com"
                         className='focus:text-sky-400" underline hover:text-sky-400'
                     >
                         loriscatiz@gmail.com
                     </a>
                 </p>
+                <p className="mt-2">
+                    Per qualsiasi domanda o dubbio in merito alla gestione dei tuoi dati personali, puoi contattarmi direttamente via email.
+                </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="What Personal Information is Collected?"
+                    text="Dati personali raccolti"
                 ></Title>
                 <p className="mt-2">
-                    The only personal data collected through this website is
-                    voluntarily provided by users through the contact form. This
-                    data includes:
+                    I soli dati personali raccolti tramite questo sito sono quelli forniti volontariamente attraverso il modulo di contatto.
+                </p>
+                <p className="mt-2">
+                    Questi includono:
                 </p>
                 <ul className="mt-2 list-inside list-disc">
-                    <li>Name (used to address you)</li>
-                    <li>Email address (used to respond to your message)</li>
+                    <li><b>Nome</b>, utilizzato per poterti identificare e rivolgermi a te correttamente</li>
+                    <li><b>Indirizzo email</b>, utilizzato per risponderti</li>
                     <li>
-                        Message content (used to understand and respond to your
-                        inquiry)
+                        <b>Contenuto del messaggio</b>, necessario per comprendere la tua richiesta
                     </li>
                 </ul>
                 <p className="mt-2">
-                    In addition, technical information such as IP address and
-                    browser user agent may be logged automatically by Netlify,
-                    the hosting provider, to prevent spam and ensure security.
-                    This information is not used for any other purpose.
+                    Inoltre, Netlify, il provider che ospita questo sito, può registrare automaticamente informazioni tecniche come l’indirizzo IP e l’user agent del browser, esclusivamente per motivi di sicurezza e prevenzione spam.
                     <p className="mt-2">
-                        This website does not use cookies or other tracking
-                        technologies for analytics or advertising.
+                        Non vengono utilizzati cookie o strumenti di tracciamento per fini statistici o pubblicitari.
                     </p>
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="How is Your Data Used?"
+                    text="Finalità del trattamento"
                 ></Title>
                 <p className="mt-2">
-                    Your personal data is used solely to respond to your
-                    inquiries submitted through the contact form. I do not
-                    share, sell, or use your data for any other purposes,
-                    including marketing.
+                    I tuoi dati vengono utilizzati solo per rispondere alle richieste inviate tramite il modulo di contatto.
+                    Non condivido, vendo o utilizzo i dati personali per finalità di marketing.
                 </p>
                 <p className="mt-2">
-                    Form submissions are managed by Netlify Forms, a service
-                    provided by Netlify. Netlify may process and store form data
-                    on its servers. To learn more about Netlify's privacy
-                    practices, you can visit their{' '}
-                    <a
+                    Le comunicazioni inviate tramite il form sono gestite da Netlify Forms, un servizio offerto da Netlify.
+                    Netlify può trattare e conservare i dati sui propri server.
+                    Per ulteriori dettagli, puoi consultare la <a
                         href="https://www.netlify.com/privacy/"
                         target="_blank"
                         className='focus:text-sky-400" underline hover:text-sky-400'
                     >
-                        Privacy Policy
+                        Privacy Policy di Netlify
                     </a>
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="Legal Basis for Data Processing"
+                    text="Base giuridica del trattamento"
                 ></Title>
                 <p className="mt-2">
-                    Under GDPR, the legal basis for processing your data is your
-                    consent. By submitting the contact form, you agree to the
-                    processing of your data as outlined in this privacy policy.
+                    Ai sensi del GDPR, la base giuridica del trattamento è il consenso dell’utente.
+                    Inviando il modulo di contatto, acconsenti al trattamento dei tuoi dati come descritto in questa informativa.
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="How Long is Your Data Retained?"
+                    text="Tempi di conservazione"
                 ></Title>
                 <p className="mt-2">
-                    Your data will be stored for as long as necessary to address
-                    your inquiry or until you request its deletion, but no
-                    longer than 1 year from the date of submission. After this
-                    period, all personal data will be permanently deleted.
+                    I dati vengono conservati solo per il tempo necessario a gestire la tua richiesta, e comunque non oltre 1 anno dalla data di invio.
+                    Trascorso tale periodo, i dati saranno eliminati in modo permanente.
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="Your Rights"
+                    text="Diritti dell’interessato"
                 ></Title>
                 <p className="mt-2">
-                    Under the GDPR, you have the following rights regarding your
-                    personal data:
+                    Hai il diritto di:
                 </p>
                 <ul className="mt-2 list-inside list-disc">
                     <li>
-                        Access: Request a copy of the data I hold about you.
+                        Accedere ai tuoi dati personali
                     </li>
                     <li>
-                        Rectification: If you have incorrect or outdated
-                        information, please contact me, and I will delete the
-                        incorrect data. You may then resubmit the form with the
-                        correct details.
+                        Chiedere la rettifica o cancellazione dei dati
                     </li>
                     <li>
-                        Deletion: Request the permanent deletion of your data.
+                        Opporti al trattamento
                     </li>
-                    <li>Objection: Object to the processing of your data.</li>
                     <li>
-                        Withdrawal of Consent: Revoke your consent to data
-                        processing at any time.
+                        Revocare il consenso in qualsiasi momento
                     </li>
                 </ul>
                 <p className="mt-2">
-                    To exercise any of these rights, contact me at my email.
+                    Per esercitare questi diritti puoi contattarmi via email.
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="Data Security"
+                    text="Sicurezza dei dati"
                 ></Title>
                 <p className="mt-2">
-                    Reasonable technical measures are in place to protect your
-                    data from unauthorized access, loss, or misuse. However,
-                    please note that no method of transmission over the internet
-                    is 100% secure.
+                    Adotto misure tecniche adeguate per proteggere i dati personali da accessi non autorizzati, perdita o uso improprio.
+                    Tuttavia, nessuna trasmissione di dati su Internet può essere considerata completamente sicura.
                 </p>
                 <Title
                     tag={'h3'}
                     className="mt-4 text-lg"
-                    text="Changes to This Privacy Policy"
+                    text="Modifiche all’informativa"
                 ></Title>
                 <p className="mt-2">
-                    This privacy policy may be updated from time to time. Any
-                    changes will be posted on this page, with the date of the
-                    latest update noted at the top.
+                    Questa informativa potrà essere aggiornata nel tempo.
+                    Eventuali modifiche verranno pubblicate su questa pagina, con la data dell’ultimo aggiornamento indicata in alto.
                 </p>
-                <p className="mt-2">Thank you for visiting my website!</p>
                 <Button
                     className="mt-4 self-start"
                     onClick={(e) => {
                         e.preventDefault(); // Prevent the default anchor behavior
                         closeModal();
                     }}
-                    text={'close'}
+                    text={'chiudi'}
                     variant={''}
                 ></Button>
             </div>

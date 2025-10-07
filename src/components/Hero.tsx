@@ -12,11 +12,11 @@ function Hero() {
                         tag="h1"
                         className="text- text-5xl md:text-7xl"
                         hasReactType={true}
-                        preText="Hi, i'm Loris, and i am a "
+                        preText="Ciao, sono Loris e sono un"
                         preTextClassName={'md:text-2xl text-lg'}
                         reactTypedStrings={[
-                            'Frontend',
                             'Backend',
+                            'Frontend',
                             'Full stack',
                         ]}
                         postText="Developer"
@@ -28,17 +28,14 @@ function Hero() {
                     ></Title>
                     <div className="flex flex-wrap gap-4">
                         <Button
-                            href={'https://github.com/loriscatiz/'}
-                            text="Github"
-                            blank={true}
+                            href='#contact'
+                            text="Contattami"
                             variant="primary"
                         ></Button>
                         <Button
-                            href={
-                                'https://drive.google.com/file/d/1TTlyfddApCZr8dUdN-8UyPq-YXyenwkC/view?usp=drive_link'
-                            }
+                            href={'https://github.com/loriscatiz/'}
                             blank={true}
-                            text="Resume"
+                            text="Github"
                             variant="secondary"
                         ></Button>
                     </div>

@@ -42,25 +42,37 @@ function Skills() {
 
     const backendSkills = [
         {
+            name: 'Django',
+            imgSrc: '/django.svg',
+            category: 'backend',
+            id: 1,
+        },
+        {
             name: 'Python',
             imgSrc: '/python.svg',
             category: 'backend',
-            id: 1,
+            id: 2,
         },
         {
             name: 'Java',
             imgSrc: '/java.svg',
             category: 'backend',
-            id: 2,
+            id: 3,
         },
     ];
 
     const databaseSkills = [
         {
+            name: 'PostgreSQL',
+            imgSrc: '/postgresql.png',
+            category: 'database',
+            id: 1,
+        },
+        {
             name: 'mySQL',
             imgSrc: '/mysql.svg',
             category: 'database',
-            id: 1,
+            id: 2,
         },
     ];
 
@@ -124,7 +136,7 @@ function Skills() {
                         alt={e.name}
                         className="h-full w-[48px] transition-transform duration-300 group-hover:scale-110"
                     />
-                    <span className="top-100 invisible absolute left-1/2 -translate-x-1/2 group-hover:visible">
+                    <span className="bottom-0 invisible absolute left-1/2 -translate-x-1/2 group-hover:visible">
                         {e.name}
                     </span>
                 </li>
@@ -138,13 +150,11 @@ function Skills() {
                 <Title
                     tag={'h2'}
                     className="text-center text-2xl text-sky-950 dark:text-sky-100 md:text-4xl"
-                    text="My Skills"
+                    text="Le mie competenze"
                 ></Title>
                 <p className="mx-auto mt-4 text-pretty text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">
-                    Here are the tools and technologies I rely on to bring
-                    projects to life. From the UI design to the frontend, from
-                    the ER diagrams to the backend functionalities. Each skill
-                    plays a role in creating efficient solutions.
+                    Questi sono gli strumenti e le tecnologie che utilizzo più spesso nello sviluppo.
+                    Dal design dell’interfaccia alla logica di backend, ogni competenza contribuisce a creare soluzioni efficienti, chiare e manutenibili.
                 </p>
                 <div className="skills-grid relative z-0 mx-auto mt-12 grid gap-x-8 gap-y-0 rounded-2xl">
                     <div className="grid grid-cols-subgrid items-center rounded-t-[20px] bg-sky-900 dark:bg-sky-200 md:col-span-2 md:px-4 md:py-6">

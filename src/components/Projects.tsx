@@ -16,9 +16,9 @@ interface Project {
 function Projects() {
     const projects: Project[] = [
         {
-            title: 'Java authentication with JWT',
+            title: 'Autenticazione Java con JWT',
             description:
-                'A secure authentication and authorization system built with Javalin, demonstrating JWT-based session management and proper security practices. Features password hashing with secure algorithms, token-based authentication with Redis for session storage, and MySQL for user data persistence. Implements clean separation of concerns between JWT validation and authentication business logic. ',
+                'Sistema di autenticazione e autorizzazione sviluppato con Javalin, basato su JWT per la gestione sicura delle sessioni. Include hashing delle password con algoritmi sicuri, autenticazione tramite token con Redis per lo storage delle sessioni e MySQL per la persistenza dei dati utente. L’architettura segue una chiara separazione tra logica di validazione JWT e logica di business dell’autenticazione.',
             languages: ['Java', 'MySQL'],
             categories: ['Backend', 'Database'],
             imgsrc: '/java-jwt-0.jpg',
@@ -26,9 +26,9 @@ function Projects() {
             githubLink: 'https://github.com/loriscatiz/java-jwt',
         },
         {
-            title: 'Personal website',
+            title: 'Sito web personale',
             description:
-                'A modern, single-page portfolio website designed to showcase projects, skills, and experience. Built with React, the site offers a clean and accessible user interface with features like project filtering and a theme toggle button for enhanced user experience',
+                'Portfolio moderno a pagina singola, progettato per presentare progetti, competenze ed esperienze. Realizzato con React, offre un’interfaccia pulita e accessibile, con funzioni come header a scomparsa allo scroll, filtraggio dei progetti e un toggle per cambiare tema, migliorando l’esperienza utente.',
             languages: ['React', 'CSS', 'JavaScript'],
             categories: ['Frontend'],
             imgsrc: '/personal-website-0.jpg',
@@ -37,9 +37,9 @@ function Projects() {
             liveLink: 'https://loriscatiz.netlify.app/',
         },
         {
-            title: 'Numeric system converter',
+            title: 'Convertitore di sistemi numerici',
             description:
-                'A simple web application that converts numbers between decimal, binary, octal, and hexadecimal systems. Features real-time updates, input validation, and helpful info about each numeric system.',
+                'Applicazione web semplice e interattiva che converte numeri tra sistemi decimale, binario, ottale ed esadecimale. Include aggiornamenti in tempo reale, validazione dell’input e informazioni utili sui diversi sistemi numerici.',
             languages: ['HTML', 'CSS', 'JavaScript'],
             categories: ['Frontend'],
             imgsrc: '/numeric-system-converter-0.JPG',
@@ -49,30 +49,19 @@ function Projects() {
             liveLink: 'https://numeric-system-converter.netlify.app/',
         },
         {
-            title: 'Python Mini Projects',
+            title: 'Esercizi di web scraping',
             description:
-                'A collection of beginner-friendly Python programs and games created while learning the language. Includes interactive terminal games and simple utility programs.',
+                'Serie di esercizi per apprendere le basi del web scraping, affrontando sia casi con HTML statici (tramite Beautiful Soup) sia siti che generano contenuti dinamici con JavaScript (utilizzando Playwright).',
             languages: ['Python'],
-            categories: ['General'],
-            imgsrc: '/python-mini-projects-0.jpg',
-            hoverImgSrc: '/python-mini-projects-1.jpg',
-            githubLink: 'https://github.com/loriscatiz/python-mini-projects',
+            categories: ['Altro'],
+            imgsrc: '/scraping-0.jpg',
+            hoverImgSrc: '/scraping-1.jpg',
+            githubLink: 'https://github.com/loriscatiz/basic-scraping-exercises',
         },
         {
-            title: 'Landing page template',
+            title: 'Database per biblioteca',
             description:
-                'A simple landing page template, built using HTML, CSS and JavaScript.',
-            languages: ['HTML', 'CSS', 'JavaScript'],
-            categories: ['Frontend'],
-            imgsrc: '/landing-0.jpg',
-            hoverImgSrc: '/landing-1.jpg',
-            githubLink: 'https://github.com/loriscatiz/landing-page-template',
-            liveLink: 'https://loriscatiz-landing-page-template.netlify.app/',
-        },
-        {
-            title: 'Library database',
-            description:
-                'A normalized and scalable database schema for a library management system, designed to demonstrate database design and SQL skills. The schema includes tables for managing members, books, authors, reservations, borrowings, fines, and staff, ensuring data integrity and optimal query performance.',
+                'Schema relazionale normalizzato e scalabile per un sistema di gestione bibliotecaria, pensato per dimostrare competenze in progettazione di database e SQL. Include tabelle per gestire utenti, libri, autori, prenotazioni, prestiti, multe e personale, garantendo integrità dei dati e performance ottimali nelle query.',
             languages: ['MySQL'],
             categories: ['Database'],
             imgsrc: '/library-0.jpg',
@@ -90,7 +79,7 @@ function Projects() {
         'React',
         'MySQL',
     ];
-    const categoryFilters = ['Frontend', 'Backend', 'Database', 'General'];
+    const categoryFilters = ['Frontend', 'Backend', 'Database', 'Altro'];
 
     const [filtered, setFiltered] = useState<Project[]>(projects);
     const [selectedLanguageFilters, setSelectedLanguageFilters] = useState<
@@ -142,14 +131,14 @@ function Projects() {
                     className={
                         'text-center text-2xl text-sky-950 dark:text-sky-100 md:text-4xl'
                     }
-                    text="My projects"
+                    text="I miei progetti"
                 ></Title>
                 <p className="mx-auto mt-4 max-w-4xl text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">
-                    Use the filters below to explore my projects. Within a group
-                    (languages or categories), filters use OR logic, showing
-                    projects that match any selection. Between groups, filters
-                    use AND logic, displaying projects that match both. Leave
-                    filters blank to see all projects.
+                    Qui trovi una selezione di progetti personali che rappresentano il mio modo di lavorare.
+                    Sono esercizi e applicazioni realizzate per sperimentare tecnologie, migliorare le mie competenze e mettere in pratica buone abitudini di sviluppo.
+                </p>
+                <p className="mx-auto mt-4 max-w-4xl text-center text-base text-sky-900 dark:text-sky-200 md:text-lg">
+                    Puoi usare i filtri qui sotto per esplorare i progetti per linguaggi o categorie.
                 </p>
 
                 {/* Category Filters */}
@@ -158,17 +147,16 @@ function Projects() {
                     className={
                         'mt-4 text-center text-lg text-sky-950 dark:text-sky-100 md:text-2xl'
                     }
-                    text="Categories"
+                    text="Categorie"
                 ></Title>
                 <div className="mt-2 grid grid-cols-2 flex-wrap justify-center gap-2 text-sky-900 dark:text-sky-200 md:px-16 lg:flex">
                     {categoryFilters.map((filter) => (
                         <button
                             key={filter}
-                            className={`rounded border-2 border-sky-900 px-4 py-2 transition-transform hover:scale-105 focus:scale-105 dark:border-sky-200 ${
-                                selectedCategoryFilters.includes(filter)
-                                    ? 'bg-sky-900 text-sky-200 dark:bg-sky-200 dark:text-sky-900'
-                                    : 'text-sky-900 dark:text-sky-200'
-                            }`}
+                            className={`rounded border-2 border-sky-900 px-4 py-2 transition-transform hover:scale-105 focus:scale-105 dark:border-sky-200 ${selectedCategoryFilters.includes(filter)
+                                ? 'bg-sky-900 text-sky-200 dark:bg-sky-200 dark:text-sky-900'
+                                : 'text-sky-900 dark:text-sky-200'
+                                }`}
                             onClick={() => toggleFilter(filter, 'categories')}
                         >
                             {filter}
@@ -182,17 +170,16 @@ function Projects() {
                     className={
                         'mt-4 text-center text-lg text-sky-950 dark:text-sky-100 md:text-2xl'
                     }
-                    text="Languages"
+                    text="Linguaggi"
                 ></Title>
                 <div className="mt-2 grid grid-cols-2 flex-wrap justify-center gap-2 text-sky-900 dark:text-sky-200 md:grid-cols-3 md:px-16 lg:flex">
                     {languageFilters.map((filter) => (
                         <button
                             key={filter}
-                            className={`rounded border-2 border-sky-900 px-4 py-2 transition-transform hover:scale-105 focus:scale-105 dark:border-sky-200 ${
-                                selectedLanguageFilters.includes(filter)
-                                    ? 'bg-sky-900 text-sky-200 dark:bg-sky-200 dark:text-sky-900'
-                                    : 'text-sky-900 dark:text-sky-200'
-                            }`}
+                            className={`rounded border-2 border-sky-900 px-4 py-2 transition-transform hover:scale-105 focus:scale-105 dark:border-sky-200 ${selectedLanguageFilters.includes(filter)
+                                ? 'bg-sky-900 text-sky-200 dark:bg-sky-200 dark:text-sky-900'
+                                : 'text-sky-900 dark:text-sky-200'
+                                }`}
                             onClick={() => toggleFilter(filter, 'languages')}
                         >
                             {filter}

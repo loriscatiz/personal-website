@@ -24,20 +24,16 @@ function Menu({
 }: MenuProps) {
     const menuItems = [
         {
-            href: '#hi',
-            text: 'Hi',
-        },
-        {
             href: '#about',
-            text: 'About me',
+            text: 'Chi sono',
         },
         {
             href: '#projects',
-            text: 'Projects',
+            text: 'Progetti',
         },
         {
             href: '#skills',
-            text: 'Skills',
+            text: 'Skill',
         },
         {
             href: '#timeline',
@@ -45,7 +41,7 @@ function Menu({
         },
         {
             href: '#contact',
-            text: 'Contact',
+            text: 'Contatti',
         },
     ];
 
@@ -63,7 +59,7 @@ function Menu({
     const menuRef = useRef<HTMLDivElement>(null);
     const themeToggleRef = useRef<HTMLButtonElement>(null);
 
-    const mapMenuItems = function (
+    const mapMenuItems = function(
         menuItems: { href: string; text: string }[],
         mobile: boolean
     ) {

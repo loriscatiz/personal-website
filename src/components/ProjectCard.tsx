@@ -82,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
                         {liveLink && (
                             <Button
-                                text={'Live demo'}
+                                text={'Demo online'}
                                 variant={'secondary'}
                                 href={liveLink}
                                 blank={true}
