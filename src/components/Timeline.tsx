@@ -14,10 +14,10 @@ function Timeline() {
             {
                 position: 'Full Stack Developer',
                 company: 'Coderit',
-                time: 'Luglio 2025 - Settembre 2025',
+                time: 'Luglio 2025 - Presente',
                 tag: 'lavoro',
                 description:
-                    "Ho collaborato come stagista allo sviluppo di una piattaforma CRM destinata agli amministratori condominiali. Mi sono occupato sia del backend sia del frontend, utilizzando Django, Bootstrap ed HTMX. L’esperienza mi ha permesso di applicare concretamente le competenze acquisite nel corso IFTS e di lavorare in un contesto orientato alla produzione reale.",
+                    "Ho iniziato come stagista e oggi collaboro come freelance allo sviluppo e al mantenimento di una piattaforma CRM per amministratori condominiali. Mi occupo sia del backend che del frontend, utilizzando Django, Bootstrap e HTMX. L’esperienza mi ha permesso di lavorare su un progetto complesso e in continua evoluzione, con attenzione alla qualità del codice, alle performance e alla stabilità nel tempo.",
                 imgSrc: '/coderit_logo.jpg',
             },
             {

@@ -14,6 +14,7 @@ function Footer() {
                     Informativa sulla privacy
                 </button>
             </p>
+            <p className="text-center mt-1">P.IVA: 14387080964</p>
         </footer>
     );
 }
